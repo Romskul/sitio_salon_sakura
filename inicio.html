@@ -9,6 +9,7 @@
 	</head>
         
 	<body>
+        <div class="backgroundImage">
         <header class="pageHeader">
             <div class="logo">
                 <img src="imagenes/Logo_Salon_Sakura.png" alt="logo Salon Sakura">
@@ -16,10 +17,16 @@
             <div class="contenedorHeader">
                 <div class="contenedorTextoHeader">
                 </div>
-                <nav>
+                <nav class="mainNav">
                     <ul>
                         <li><a class="pag_activa" href="inicio.html">INICIO</a></li>
-                        <li><a href="filosofia.html">OFERTA</a></li>
+                        <li class="li_desplegable">
+                            <a href="oferta.html">OFERTA<span id="flecha"> &#9660;</span></a>
+                            <div class="div_desplegable">
+                                <a href="carta.html">PELUQUERÍA</a>
+                                <a href="carta.html">BELLEZA</a>
+                            </div>
+                        </li>
                         <li><a href="#">EVENTOS</a></li>
                         <li><a href="equipo.html">CONTACTO</a></li>
                     </ul>
@@ -33,6 +40,6 @@
         </main>
         <footer class="pageFooter"></footer>
         
-        
+       </div> 
 	</body>
 </html>
