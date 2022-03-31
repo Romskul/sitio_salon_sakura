@@ -1,0 +1,62 @@
+<!doctype html>
+
+<html>
+	<head>
+		<title>Page Title</title>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="initial-scale=1.0">
+        <link href="estilos/estilos.css" rel="stylesheet">
+        <script>
+        
+            function cambioPetalo(){
+                let paginaActiva=document.getElementsByClassName("linkWebSite");
+                paginaAvtiva.classList.toggle("pagActiva");
+            }
+        </script>
+	</head>
+        
+	<body>
+        <div class="backgroundImage">
+        <header class="pageHeader">
+            
+            <div class="contenedorHeader">
+                <h1>Salón Sakura</h1>
+            </div>
+            <div class="wrapperRrss">
+                <div class="cajaRrss">
+                    <p class="rrssTexto">Síguenos en:</p>
+                    <a href="#"><img src="imagenes/logo_facebook.png" alt="facebook" class="fb"></a>
+                    <a href="#"><img src="imagenes/logo_instagram.png" alt="instagram" class="insta"></a>
+                </div>  
+            </div>
+        </header>
+        
+        <nav class="mainNav">
+                <ul>
+                    <li><a class="linkWebSite" href="inicio.html" onclick="cambioPetalo">INICIO</a></li>
+                    <li class="li_desplegable">
+                        <a class="linkWebSite" href="oferta.html">OFERTA<span id="flecha"> &#9660;</span></a>
+                        <div class="div_desplegable">
+                            <a class="linkWebSiteSub" href="#">PELUQUERÍA</a>
+                            <a class="linkWebSiteSub" href="#">BELLEZA</a>
+                        </div>
+                    </li>
+                    <li><a class="linkWebSite" href="#">EVENTOS</a></li>
+                    <li><a class="linkWebSite" href="#">CONTACTO</a></li>
+                </ul>
+        </nav>
+        <div class="wrapperLogo">
+            <div class="logo">
+                <img src="imagenes/Logo_Salon_Sakura.png" alt="logo Salon Sakura">
+            </div>
+        </div>
+        <div class="tallo">
+        </div>
+        <main class="mainContent">
+            <p></p>
+        </main>
+        <footer class="pageFooter"></footer>
+        
+       </div> 
+	</body>
+</html>

@@ -20,7 +20,8 @@ html{
     margin: 0;
 }
 body { 
-    
+    max-width: 1400px;
+    margin: auto;
 /*    grid-gap: 10px;*/
 /*    margin: 0;*/
 /*    padding: 1em;*/
@@ -35,14 +36,13 @@ body {
     "sd main main main main main main main main" minmax(30vh, auto)
     "sd main main main main main main main main" minmax(30vh, auto)
     "ft ft ft ft   ft   ft   ft   ft   ft" minmax(4.5em, auto)
-    / .15fr 1fr 1fr 2fr 2fr 2fr 2fr 2fr 2fr ;
+    / .15fr 1fr 1fr 2fr 2fr 2fr 2fr 2fr 2fr;
     background-image: url(../imagenes/lovepik-cherry-tree-png-image_400227628_wh1200_transparent.png);
     background-size: cover;
-    margin: 1em;
     margin-top: 0;
+    
 }
-header {
-}
+
 
 .pageHeader {
     grid-area: hd;
@@ -50,7 +50,7 @@ header {
     background-color: transparent;
     padding: 0;
     margin: 0;
-    
+    border-right: ridge 4px rgb(131, 117, 111);
 }
 .wrapperLogo {
     grid-area: log;
@@ -62,44 +62,66 @@ header {
     top: 0;
 }
 .logo {
-    width: 80%;
-    flex: 0 0 auto;
+    min-width: 10em;
     border: ridge 4px rgb(251, 192, 215);
     border-radius: 0 20%;
     background-color: white;
+    margin-left: 2em;
 }
 
 .logo img {
     width: 100%;
     border-radius: 0 20%;
 }
+
 .contenedorHeader {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 70%;
+    min-width: 60%;
     height: 100%;
     margin-left: 8em;
     font-family: 'alluraregular';
     padding: 0;
 }
-.wrapperRrss{
-    grid-area: rrss;
-    display: flex;
-    justify-content: space-around;
-    width: 20%;
-}
-
-.wrapperRrss img {
-    width: 2em;
-}
 
 .contenedorHeader h1{
     font-family: 'alluraregular';
-    font-size: 5em;
+    font-size: 4em;
     margin: 0; 
     padding: 0;
 
+}
+.wrapperRrss {
+    display: flex;
+    align-items: center;
+    padding-right: 5em;
+    
+}
+.cajaRrss{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-height: 4em;
+    border: ridge 4px rgb(131, 117, 111);
+    background-color: rgba(245, 239, 240, 0.671);
+    border-radius: 15% 15%;
+}
+
+.wrapperRrss a {
+    max-width: 15%;
+    margin-left: 1em;
+}
+
+.wrapperRrss p {
+    font-family: 'playballregular';
+    font-size: 1.5em;
+    font-weight: 400;
+}
+
+.fb, .insta {
+    max-width: 75%;
+    
 }
 
 .mainNav {
@@ -109,7 +131,7 @@ header {
     padding:0;
     position: sticky;
     top:1em;
-    
+    border-right: ridge 4px rgb(131, 117, 111);
 }
 .espaciadoNav{
     width: 20%;
@@ -130,14 +152,10 @@ header {
     display: flex;
     align-items: center;
     justify-content:center;
-    width: 8.1em;
-    height: 4.75em;
+    min-width: 6.4em;
+    min-height: 3.75em;
     background-image: url(../imagenes/petalo_sakura_nav2.png);
-    background-size: cover;
-    padding: 0;
-    margin: 0;
-   
-/*    border: solid*/
+    background-size: cover;   
 }
 
 .mainNav ul li a{
@@ -147,12 +165,14 @@ header {
     color: black;
     font-size: 1em;
     font-family: 'playballregular';
+    font-size: .75em;
+    /* font-weight: 500; */
 }
 
 .div_desplegable{
     max-height: 50vh;
     position: absolute;
-    padding-top: 15.5em;
+    padding-top: 13em;
     text-align: center;
     display: none;
 }
@@ -161,28 +181,43 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 8.15em;
-    height:4.83em;
+    min-width: 8.4em;
+    min-height: 5em;
     color: white;
-    background-image: url(../imagenes/petalo_sakura_nav.png);
+    background-image: url(../imagenes/petalo_sakura_nav2.png);
     background-size: cover;
     font-family: 'playballregular';
-    
-    
+    font-size: 0.75em; 
 }
-
-/*
-.div_desplegable a:hover {
-    background-color: #22b78f;
-}
-*/
 
 .li_desplegable:hover .div_desplegable{
     display: flex;
     flex-direction: column;
     grid-gap: 0.5em;
-    transition: 1.5s;
-    
+    transition: 1.5s; 
+}
+
+.pagActiva{
+    display: flex;
+    align-items: center;
+    justify-content:center;
+    min-width: 6.4em;
+    min-height: 3.75em;
+    background-image: url(../imagenes/petalo_sakura_active_page.png);
+    background-size: cover;   
+}
+
+.pagActivaSubNav{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 8.4em;
+    min-height: 5em;
+    color: white;
+    background-image: url(../imagenes/petalo_sakura_active_page.png);
+    background-size: cover;
+    font-family: 'playballregular';
+    font-size: 0.75em; 
 }
 
 .tallo {
@@ -193,10 +228,16 @@ header {
 
 .mainContent {
     grid-area: main;
-/*
-    background-image: url(../imagenes/lovepik-cherry-tree-png-image_400227628_wh1200_transparent.png);
-    background-size: cover;
-*/
+    border-right: ridge 4px rgb(131, 117, 111); 
+    display: flex;
+}
+
+.imagenSalon{
+    width: 75%;
+}
+
+.imagenSalon img {
+    width: 50%;;
 }
 
 .pageFooter {
@@ -204,5 +245,5 @@ header {
 }
 footer {
     background-color: rgb(191, 186, 183);
-    border: solid 3px black; 
+    
 }
