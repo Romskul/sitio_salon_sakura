@@ -1,4 +1,21 @@
 /*///////////////////////////ESTILOS COMUNES//////////////////////////////////*/
+@font-face {
+    font-family: 'playballregular';
+    src: url('../fuentes/playball-regular-webfont.woff2') format('woff2'),
+         url('../fuentes/playball-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'alluraregular';
+    src: url('../fuentes/allura-regular-webfont.woff2') format('woff2'),
+         url('../fuentes/allura-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
 html{
     margin: 0;
 }
@@ -11,8 +28,8 @@ body {
 .backgroundImage {
     display: grid;
     grid-template: 
-    "sd log log hd   hd   hd   hd   hd   hd" minmax(6em, auto)
-    "sd ·  ·  ·   nv   nv   nv   nv   nv" minmax(7.5em, auto)  
+    "sd log log hd   hd   hd   hd   hd   hd" minmax(5.5em, auto)
+    "sd ·  ·  ·   nv   nv   nv   nv   nv" minmax(4.5em, auto)  
     "sd main main main main main main main main" minmax(30vh, auto)
     "sd main main main main main main main main" minmax(30vh, auto)
     "sd main main main main main main main main" minmax(30vh, auto)
@@ -63,13 +80,33 @@ header {
     width: 70%;
     height: 100%;
     margin-left: 8em;
-    
+    font-family: 'alluraregular';
+    padding: 0;
+}
+.wrapperRrss{
+    grid-area: rrss;
+    display: flex;
+    justify-content: space-around;
+    width: 20%;
+}
+
+.wrapperRrss img {
+    width: 2em;
+}
+
+.contenedorHeader h1{
+    font-family: 'alluraregular';
+    font-size: 5em;
+    margin: 0; 
+    padding: 0;
+
 }
 
 .mainNav {
     grid-area: nv;
     display: flex;
     height: 100%;
+    padding:0;
     position: sticky;
     top:1em;
     
@@ -93,8 +130,8 @@ header {
     display: flex;
     align-items: center;
     justify-content:center;
-    width: 8em;
-    height: 4.7em;
+    width: 8.1em;
+    height: 4.75em;
     background-image: url(../imagenes/petalo_sakura_nav2.png);
     background-size: cover;
     padding: 0;
@@ -109,28 +146,27 @@ header {
     margin: 0;
     color: black;
     font-size: 1em;
+    font-family: 'playballregular';
 }
 
 .div_desplegable{
     max-height: 50vh;
     position: absolute;
-    top:7em;
+    padding-top: 15.5em;
     text-align: center;
     display: none;
-    
-    
 }
 
 .div_desplegable a {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 8em;
-    height:4.7em;
+    width: 8.15em;
+    height:4.83em;
     color: white;
     background-image: url(../imagenes/petalo_sakura_nav.png);
     background-size: cover;
-    
+    font-family: 'playballregular';
     
     
 }
