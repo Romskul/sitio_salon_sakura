@@ -47,50 +47,45 @@
             <div class="tallo">
             </div>
             <main class="mainContent">
+                <section>
+                    
+                </section>
                 <div class="galeriaSalon">
-                    <img id="imagenesSalon" src="imagenes/foto_salon4.jpg" alt="Salon">
+                    <img id="imagenesSalon" class="opacity" src="imagenes/foto_salon3.jpg" alt="Salon">
                 </div>
                 <script>
                     let id_setinterval;
                     let paso = 0;
                     let imagen = 0;
                     let fotoGaleria =document.getElementById("imagenesSalon");
-                   
+                    
                     function galeria(){
                         paso++;
                         switch( paso % 2 + 1){   
                             case 1:
-                                fotoGaleria.classList.add("hidden")
-                                // fotoGaleria.style.opacity=0;
+                                fotoGaleria.classList.add("hidden");
                             break;   
                             case 2:
                                 imagen++;
-                                switch (imagen % 4 + 1){
+                                switch (imagen % 3 + 1){
                                     case 1:
-                                        fotoGaleria.src="imagenes/foto_salon4.jpg";
-                                        break;
-                                    case 2:
-                                        fotoGaleria.src="imagenes/foto_salon2.jpg";
-                                        break;
-                                    case 3:
                                         fotoGaleria.src="imagenes/foto_salon3.jpg";
                                         break;
-                                    case 4:
-                                        fotoGaleria.src="imagenes/foto_salon.jpg";
+                                    case 2:
+                                        fotoGaleria.src="imagenes/foto_salon4.jpg";
+                                        break;
+                                    case 3:
+                                        fotoGaleria.src="imagenes/foto_salon2.jpg";
                                         break;
                                 }
-                            fotoGaleria.classList.remove("hidden")
-                            // fotoGaleria.style.opacity=1;
+                            fotoGaleria.classList.remove("hidden");
                             break;                           
-                        }
-                        
+                        }  
                     }
                     function iniciar(){
-                        id_setinterval=setInterval(galeria,6000);   
+                        id_setinterval=setInterval(galeria,4000); 
+                        paso=1;  
                     }
-                    setTimeout(() => {
-                        galeria();
-                    }, 6000);
                     window.onload= iniciar;
                 </script>
             </main>
