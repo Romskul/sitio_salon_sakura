@@ -6,6 +6,7 @@
 		<meta charset="UTF-8">
 		<meta name="viewport" content="initial-scale=1.0">
         <link href="estilos/estilos.css" rel="stylesheet">
+       
 	</head>
         
 	<body>
@@ -26,7 +27,7 @@
             
             <nav class="mainNav">
                     <ul>
-                        <li><a href="inicio.html" onclick="cambioPetalo()">INICIO</a></li>
+                        <li><a  href="inicio.html">INICIO</a></li>
                         <li class="li_desplegable">
                             <a href="oferta.html">OFERTA<span id="flecha"> &#9660;</span></a>
                             <div class="div_desplegable">
@@ -34,7 +35,7 @@
                                 <a href="#">BELLEZA</a>
                             </div>
                         </li>
-                        <li><a href="eventos.html">EVENTOS</a></li>
+                        <li><a href="#">EVENTOS</a></li>
                         <li><a href="#">CONTACTO</a></li>
                     </ul>
             </nav>
@@ -46,10 +47,52 @@
             <div class="tallo">
             </div>
             <main class="mainContent">
-                <div class="imagenSalon">
-                    <img src="imagenes/foto_salon.jpg" alt="Salon">
+                <div class="galeriaSalon">
+                    <img id="imagenesSalon" src="imagenes/foto_salon4.jpg" alt="Salon">
                 </div>
+                <script>
+                    let id_setinterval;
+                    let paso = 0;
+                    let imagen = 0;
+                    let fotoGaleria =document.getElementById("imagenesSalon");
+                   
+                    function galeria(){
+                        paso++;
+                        switch( paso % 2 + 1){   
+                            case 1:
+                                fotoGaleria.style.opacity=0;
+                            break;   
+                            case 2:
+                                imagen++;
+                                switch (imagen % 4 + 1){
+                                    case 1:
+                                        fotoGaleria.src="imagenes/foto_salon4.jpg";
+                                        break;
+                                    case 2:
+                                        fotoGaleria.src="imagenes/foto_salon2.jpg";
+                                        break;
+                                    case 3:
+                                        fotoGaleria.src="imagenes/foto_salon3.jpg";
+                                        break;
+                                    case 4:
+                                        fotoGaleria.src="imagenes/foto_salon.jpg";
+                                        break;
+                                }
+                            fotoGaleria.style.opacity=1;
+                            break;                           
+                        }
+                        
+                    }
+                    function iniciar(){
+                        id_setinterval=setInterval(galeria,6000);   
+                    }
+                    setTimeout(() => {
+                        galeria();
+                    }, 6000);
+                    window.onload= iniciar;
+                </script>
             </main>
+
             <footer class="pageFooter"></footer>
         
        </div> 
