@@ -41,7 +41,7 @@
             </nav>
             <div class="wrapperLogo">
                 <div class="logo">
-                    <img src="imagenes/Logo_Salon_Sakura.png" alt="logo Salon Sakura">
+                    <img src="imagenes/Logo_Salon_Sakura.png" class="opacity" alt="logo Salon Sakura">
                 </div>
             </div>
             <div class="tallo">
@@ -60,7 +60,8 @@
                         paso++;
                         switch( paso % 2 + 1){   
                             case 1:
-                                fotoGaleria.style.opacity=0;
+                                fotoGaleria.classList.add("hidden")
+                                // fotoGaleria.style.opacity=0;
                             break;   
                             case 2:
                                 imagen++;
@@ -78,7 +79,8 @@
                                         fotoGaleria.src="imagenes/foto_salon.jpg";
                                         break;
                                 }
-                            fotoGaleria.style.opacity=1;
+                            fotoGaleria.classList.remove("hidden")
+                            // fotoGaleria.style.opacity=1;
                             break;                           
                         }
                         

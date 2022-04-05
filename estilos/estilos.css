@@ -232,7 +232,10 @@ nav ul li .pagActiva{
     
     
 }
-
+.opacity {
+    opacity: 1;
+    
+}
 .hidden {
     opacity: 0;
 }
@@ -240,7 +243,6 @@ nav ul li .pagActiva{
 #imagenesSalon {
     width: 90%; 
     position:absolute;
-    opacity: 1;
     transition: 6s;
     align-self: center;
     
