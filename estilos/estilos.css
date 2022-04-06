@@ -13,7 +13,14 @@
          url('../fuentes/allura-regular-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
+}
 
+@font-face {
+    font-family: 'robotoregular';
+    src: url('../fuentes/roboto-regular-webfont.woff2') format('woff2'),
+         url('../fuentes/roboto-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
 }
 
 html{
@@ -35,10 +42,10 @@ body {
     "sd main main main main main main main main" minmax(40vh, auto)
     "ft ft ft ft   ft   ft   ft   ft   ft" minmax(4.5em, auto)
     /.15fr 1fr 1fr 2fr 2fr 2fr 2fr 2fr 2fr;
-    background-image: url(../imagenes/lovepik-cherry-tree-png-image_400227628_wh1200_transparent.png);
+    background-image: url(../imagenes/lovepik-cherry-tree-png-image_400227628_wh1200_transparent2.png);
     background-size: cover;
     margin-top: 0;
-    background-color: rgb(200, 197, 197);
+    background-color: rgb(240, 230, 230);
 }
 
 
@@ -48,7 +55,7 @@ body {
     background-color: transparent;
     padding: 0;
     margin: 0;
-    border-right: ridge 4px rgb(131, 117, 111);
+    border-right: ridge 4px rgb(135, 129, 126);
 }
 .wrapperLogo {
     grid-area: log;
@@ -57,7 +64,7 @@ body {
     align-items: center;
     width: 100%;
     margin-top: 2em;
-    padding-left: 4em;
+    margin-left: 4em;
     position: sticky;
     top: 0;
 }
@@ -120,12 +127,12 @@ body {
 
 .fb, .insta {
     max-width: 75%;
-    
 }
 
 .mainNav {
     grid-area: nv;
     display: flex;
+    flex-direction: column;
     height: 100%;
     padding:0;
     position: sticky;
@@ -177,10 +184,9 @@ body {
 .div_desplegable{
     max-height: 50vh;
     position: absolute;
-    padding-top: 13em;
+    padding-top: 13.7em;
     text-align: center;
     display: none;
-
 }
 
 .div_desplegable a {
@@ -222,25 +228,59 @@ nav ul li .pagActiva{
     grid-area: main;
     border-right: ridge 4px rgb(131, 117, 111); 
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: space-between;
     align-items: center;
+    margin: 0;
+    padding-top: 10.5em;
+}
+
+.subtitulo_inicio {
+    margin-top: 3em;
+    font-family: 'playballregular';
+    font-weight: normal;
+    font-size: 2em;
+}
+
+.subtitulo2_inicio {
+    font-family: 'playballregular';
+    font-weight: normal;
+    font-size: 2em;
+    margin-top: 2em;
+    padding-bottom: 10em;
+}
+
+#section1_inicio {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height: 50%;
+}
+
+#texto_inicio {
+    width: 40%;
+    font-family: 'robotoregular';
+    margin-left: 4em;
 }
 
  .galeriaSalon{
     position: relative;
     justify-content: center;
     display: flex;
-    width: 45%; 
-    height: 42%;
+    width: 38%; 
+    height: 80%;
     border: solid 4px rgb(131, 117, 111);
+    border-radius: 20% 0;
     background-image: url(../imagenes/borde_sakura_bg_galeria_trans.png);
-    background-size: cover;
-    
+    background-size: cover; 
+    margin-right: 4em;
 }
+
 .opacity {
     opacity: 1;
-    
 }
+
 .hidden {
     opacity: 0;
 }
@@ -251,8 +291,20 @@ nav ul li .pagActiva{
     transition: 4s;
     align-self: center;
     z-index: 0;  
+    border-radius: 20% 0;
 }
 
+.vuelo_petalos{
+    display: flex;
+    justify-content: center;
+    width: 50%;
+    height: 22%;
+    
+}
+
+.vuelo_petalos img {
+    width: 100%;
+}
 .pageFooter {
     grid-area: ft;
     background-color: rgb(191, 186, 183);
