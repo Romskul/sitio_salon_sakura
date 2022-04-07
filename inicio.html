@@ -6,41 +6,7 @@
 		<meta charset="UTF-8">
 		<meta name="viewport" content="initial-scale=1.0">
         <link href="estilos/estilos.css" rel="stylesheet">
-        <script>
-            let id_setinterval;
-            let paso = 0;
-            let imagen = 0;
-            let fotoGaleria =document.getElementById("imagenesSalon");
-            
-            function galeria(){
-                paso++;
-                switch( paso % 2 + 1){   
-                    case 1:
-                        fotoGaleria.classList.add("hidden");
-                    break;   
-                    case 2:
-                        imagen++;
-                        switch (imagen % 3 + 1){
-                            case 1:
-                                fotoGaleria.src="imagenes/foto_salon3.jpg";
-                                break;
-                            case 2:
-                                fotoGaleria.src="imagenes/foto_salon4.jpg";
-                                break;
-                            case 3:
-                                fotoGaleria.src="imagenes/foto_salon2.jpg";
-                                break;
-                        }
-                    fotoGaleria.classList.remove("hidden");
-                    break;                           
-                }  
-            }
-            function iniciar(){
-                id_setinterval=setInterval(galeria,4000); 
-                paso=1;  
-            }
-            window.onload= iniciar;
-        </script>
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	</head>
         
 	<body>
@@ -61,11 +27,12 @@
             
             <nav class="mainNav">
                     <ul>
-                        <li><a  href="inicio.html">INICIO</a></li>
+                        <li><a class="pagActiva" href="inicio.html">INICIO</a></li>
                         <li class="li_desplegable">
-                            <a href="oferta.html">OFERTA<span id="flecha"> &#9660;</span></a>
+                            <a href="oferta.html">OFERTA<span class="material-icons">
+                                expand_more</span></a>
                             <div class="div_desplegable">
-                                <a href="#">PELUQUERÍA</a>
+                                <a href="oferta-peluqueria.html">PELUQUERÍA</a>
                                 <a href="#">BELLEZA</a>
                             </div>
                         </li>
@@ -75,35 +42,92 @@
             </nav>
             <div class="wrapperLogo">
                 <div class="logo">
-                    <img src="imagenes/Logo_Salon_Sakura.png" class="opacity" alt="logo Salon Sakura">
+                    <img src="imagenes/Logo_Salon_Sakura.png" class="logo_sakura" alt="logo Salon Sakura">
                 </div>
             </div>
+            <script>
+                
+                window.onscroll=function() {
+                    if (scrollY >= 100) {
+                        document.getElementsByClassName("logo")[0].style.width="7em";
+                        document.getElementsByClassName("logo")[0].style.left="12em";
+                    }else {
+                        document.getElementsByClassName("logo")[0].style.width="12em";
+                        document.getElementsByClassName("logo")[0].style.left="0em";
+                    }
+                }
+            </script>
             <div class="tallo">
             </div>
-            <main class="mainContent">
+            <main class="mainContent_inicio">
                 <h2 class="subtitulo_inicio">"¿Estás preparad@ para probar tratamientos maravillosos?"</h2>
                 <section id="section1_inicio">
                     <p id="texto_inicio">
-                        Salon Sakura es un centro de belleza que se encuentra en el barrio de Lakua-Arriaga en Vitoria-Gasteiz, un exclusivo salón de estética donde encontrarás a un gran equipo profesional y 
+                        <strong>Salon Sakura</strong> es un centro de belleza que se encuentra en el barrio de <br/>Lakua-Arriaga en Vitoria-Gasteiz, un exclusivo salón de estética donde encontrarás a un gran equipo profesional y 
                         recibirás los tratamientos capilares más innovadores.<br/><br/>
                         Trabajamos con técnicas naturales, nos gusta despertar la belleza del paso del tiempo, nuestra propia belleza en evolución y por eso nuestros tratamientos 
                         siempre van enfocados a lograr la perfección, pero favoreciendo la armonía y el bienestar.<br/><br/>
-                        En Salon Sakura nos comprometemos con la calidad de nuestra línea cosmética para cabello.
+                        En <strong>Salon Sakura</strong> nos comprometemos con la calidad de nuestra línea cosmética para cabello.
                         Elegimos productos especialmente diseñados para el cuidado del pelo que liberan toda la energía que contiene nuestro cabello, 
                         garantizando el máximo resultado en el campo de la belleza.<br/><br/>
                     </p>
                     <div class="galeriaSalon">
                         <img id="imagenesSalon" class="opacity" src="imagenes/foto_salon3.jpg" alt="Salon">
                     </div>
+                    <script>
+                        let id_setinterval;
+                        let paso = 0;
+                        let imagen = 0;
+                        let fotoGaleria =document.getElementById("imagenesSalon");
+                        
+                        function galeria(){
+                            paso++;
+                            switch( paso % 2 + 1){   
+                                case 1:
+                                    fotoGaleria.classList.add("hidden");
+                                break;   
+                                case 2:
+                                    imagen++;
+                                    switch (imagen % 3 + 1){
+                                        case 1:
+                                            fotoGaleria.src="imagenes/foto_salon3.jpg";
+                                            break;
+                                        case 2:
+                                            fotoGaleria.src="imagenes/foto_salon4.jpg";
+                                            break;
+                                        case 3:
+                                            fotoGaleria.src="imagenes/foto_salon2.jpg";
+                                            break;
+                                    }
+                                fotoGaleria.classList.remove("hidden");
+                                break;                           
+                            }  
+                        }
+                        function iniciar(){
+                            id_setinterval=setInterval(galeria,6000); 
+                            paso=1;  
+                        }
+                        window.onload= iniciar;
+                    </script>
                 </section>
-                <h2 class="subtitulo_inicio2">"Pues ahora, relajate y dejanos ayudarte a encontrar tu mejor tratamiento."</h2>
+                <h2 class="subtitulo2_inicio">"Pues ahora, relajate y dejanos ayudarte a encontrar tu mejor tratamiento."</h2>
                 <div class="vuelo_petalos">
                     <img src="imagenes/vuelo_petalos2.png" alt="petalos al vuelo">
                     <img src="imagenes/vuelo_petalos2.png" alt="petalos al vuelo">
                 </div>
             </main>
 
-            <footer class="pageFooter"></footer>
+            <footer class="pageFooter">
+                <p> Juntas Generales Kalea, 74, bajo<br/>
+                    01010 Vitoria-Gasteiz, Álava<br/>
+                    Tfno: 945 30 98 69
+                </p>
+                <p>Iñaki Martin Caro - 04/2022 - Proyecto portfolio sitio-Salon-Sakura</p>
+                <div class="aenkomer">
+                    <p>Entidad colaboradora:</p>
+                    <img src="imagenes/aenkomer-logo.png" alt="Aenkomer">
+                </div>
+            </footer>
         
        </div> 
 	</body>
