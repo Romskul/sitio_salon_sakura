@@ -58,84 +58,66 @@
             </script>
             <div class="tallo">
             </div>
-            <main class="mainContent">
-                <h2 class="subtitulo_ofertas">Tanto si buscas un peinado clásico como uno moderno, nosotros te ofrecemos la solución</h2>
-                <div id="wrapper_deslizador">
-                    <ul class="deslizador">
-                        <li>
-                            <input type="radio" id="slide1" name="boton" checked>
-                            <label for="slide1"></label>
-                            <img src="imagenes/peinados/peinado1.jpg" alt="Panel 1">
-                        </li>
-                        <li>
-                            <input type="radio" id="slide2" name="boton">
-                            <label for="slide2"></label>
-                            <img src="imagenes/peinados/peinado2.jpg" alt="Panel 2">
-                        </li>
-                        <li>
-                            <input type="radio" id="slide3" name="boton">
-                            <label for="slide3"></label>
-                            <img src="imagenes/peinados/peinado3.jpg" alt="Panel 3">
-                        </li>
-                        <li>
-                            <input type="radio" id="slide4" name="boton">
-                            <label for="slide4"></label>
-                            <img src="imagenes/peinados/peinado4.jpg" alt="Panel 4">
-                       </li>
-                        <li>
-                            <input type="radio" id="slide5" name="boton">
-                            <label for="slide5"></label>
-                            <img src="imagenes/peinados/peinado5.jpg" alt="Panel 5">
-                        </li>
-                        <li>
-                            <input type="radio" id="slide6" name="boton">
-                            <label for="slide6"></label>
-                            <img src="imagenes/peinados/peinado5b.jpg" alt="Panel 6">
-                        </li>
-                        <li>
-                            <input type="radio" id="slide7" name="boton">
-                            <label for="slide7"></label>
-                            <img src="imagenes/peinados/peinado6.jpg" alt="Panel 7">
-                        </li>
-                        <li>
-                            <input type="radio" id="slide8" name="boton">
-                            <label for="slide8"></label>
-                            <img src="imagenes/peinados/peinado7.jpg" alt="Panel 8">
-                        </li>
-                        <li>
-                            <input type="radio" id="slide9" name="boton">
-                            <label for="slide9"></label>
-                            <img src="imagenes/peinados/peinado8.jpg" alt="Panel 9">
-                        </li>
-                        <li>
-                            <input type="radio" id="slide10" name="boton">
-                            <label for="slide10"></label>
-                            <img src="imagenes/peinados/peinado9.jpg" alt="Panel 10">
-                        </li>
-                        <li>
-                            <input type="radio" id="slide11" name="boton">
-                            <label for="slide11"></label>
-                            <img src="imagenes/peinados/peinado10.jpg" alt="Panel 11">
-                        </li>
-                        <li>
-                            <input type="radio" id="slide12" name="boton">
-                            <label for="slide12"></label>
-                            <img src="imagenes/peinados/peinado11.jpg" alt="Panel 12">
-                        </li>
-                        <li>
-                            <input type="radio" id="slide13" name="boton">
-                            <label for="slide13"></label>
-                            <img src="imagenes/peinados/peinado12.jpg" alt="Panel 13">
-                        </li>
-                    </ul>
+            <main class="mainContent_pelu">
+                
+                <h2 class="subtitulo_ofertas">Tómate tu tiempo y mira algunas de las posibilidades de nuestro trabajo</h2>
+                <div id="wrapper_imagenes">
+                    
+                    <div class="fila_peinados">
+                
+                        <img src="imagenes/peinados/peinado1.jpg" alt="Panel 1" onclick="showFigBox()">
+                    
+                        <img src="imagenes/peinados/peinado2.jpg" alt="Panel 2" onclick="showFigBox()">
+                    
+                        <img src="imagenes/peinados/peinado3.jpg" alt="Panel 3" onclick="showFigBox()">
+                    
+                        <img src="imagenes/peinados/peinado4.jpg" alt="Panel 4" onclick="showFigBox()">
+                    
+
+                    </div>
+                    <div class="fila_peinados">
+                        <img src="imagenes/peinados/peinado5.jpg" alt="Panel 5" onclick="showFigBox()">
+
+                        <img src="imagenes/peinados/peinado6.jpg" alt="Panel 6" onclick="showFigBox()">
+                    
+                        <img src="imagenes/peinados/peinado7.jpg" alt="Panel 7" onclick="showFigBox()">
+                    
+                        <img src="imagenes/peinados/peinado8.jpg" alt="Panel 8" onclick="showFigBox()">
+                
+                    </div>
+                    <div class="fila_peinados">
+
+                        <img src="imagenes/peinados/peinado9.jpg" alt="Panel 9" onclick="showFigBox()">
+
+                        <img src="imagenes/peinados/peinado10.jpg" alt="Panel 10" onclick="showFigBox()">
+
+                        <img src="imagenes/peinados/peinado11.jpg" alt="Panel 11" onclick="showFigBox()">
+
+                        <img src="imagenes/peinados/peinado12.jpg" alt="Panel 12" onclick="showFigBox()">
                 </div>
 
 
+                   
 
 
+                <div id="show_box" class="visibilityHidden" onclick="showFigBox()">                
+                    <img id="img_show_box">
+                </div>
 
+                 <script>
+                    // When the user clicks on <div>, open the popup
+                    var popup = document.getElementById("show_box");
+                    var bodyBlock = document.getElementsByTagName("body")[0];
+                    var fotoElegida;
 
-
+                    function showFigBox() {            
+                        popup.classList.toggle("show");
+                        popup.classList.toggle("visibilityHidden");
+                        bodyBlock.classList.toggle("scrollBlock");
+                    
+                    }
+                
+                    </script>
 
 
                 

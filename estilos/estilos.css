@@ -30,6 +30,7 @@ body {
     max-width: 1400px;
     margin: auto;
     background-color: rgb(236, 226, 226);
+    overflow: auto;
 }
 .backgroundImage {
     display: grid;
@@ -214,23 +215,6 @@ body {
     grid-gap: 0.5em;
 }
 
-/* .pagActiva {
-    display: flex;
-    text-decoration: none;
-    align-items: center;
-    justify-content: center;
-    margin: 0;
-    color: black;
-    font-size: 1em;
-    font-family: 'playballregular';
-    font-size: .75em;
-    min-width: 9.1em;
-    min-height: 5.4em;
-    background-image: url(../imagenes/petalo_sakura_nav2.png);
-    background-size: cover;
-}  */
-
-
 nav ul li .pagActiva{
     display: flex;
     align-items: center;
@@ -370,9 +354,9 @@ display: flex;
 .vuelo_petalos{
     display: flex;
     justify-content: center;
-    width: 50%;
-    height: 22%;
-    
+    max-width: 50%;
+    min-height: 30%;
+    padding-top: 3em;
 }
 
 .vuelo_petalos img {
@@ -382,14 +366,13 @@ display: flex;
  /*///////////////////////////////inicio.html/////////////////////////////////*/
 
  /*//////////////////////////////ofertas_peluqueria /////////////////////////////*/
- .mainContent {
+ .mainContent_pelu {
     grid-area: main;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: flex-end;
     align-items: center;
     margin: 0;
-    padding-top: 13em;
 }
  
 
@@ -404,136 +387,59 @@ display: flex;
  
  
  /*////////////////////////////GALERIA OFERTAS////////////////////////*/
- .deslizador {
-    position: realtive;
-    width: 15.625em;
-    height: 20em;
-    border: ridge 6px #197783;
-    border-radius: 15px;
-    padding: 0; 
-    margin-top: 5em;
-    margin-bottom: 5em;
-    overflow: hidden;
-    
-}
+ 
+ #wrapper_imagenes {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%; 
+    padding-top: 2em;
+ }
 
-/*/////////////////* Deslizantes ////////////////////////*/
+ .fila_peinados {
+     width: 60%;
+     padding-left: 11em;
+ }
 
-.deslizador li {
-    list-style:none;
-    position: absolute;
-}
-
-.deslizador input {
-    display: none;
-}
-
-/*/////////////////// Navegación /////////////////////*/
-
-.deslizador label {
-    display: block;
-    max-width: .75em;
-    max-height: .75em;
-    position: absolute;
-    bottom: .5em;
-    left: 0;
-    z-index: 10;
-    visibility: hidden;
+ #wrapper_imagenes .fila_peinados img {
+    width: 12%;
+    margin: 2em;
     cursor: pointer;
-    background-color: white;
-    background-image: linear-gradient(transparent, hsla(0,0%,0%,.25));
-    border: solid .3em  black;
-    border-radius: 100%;
-    opacity: 0;
-    transition: .35s;
-}
+    border-radius: 1em;
+    border: ridge 2px rgb(251, 192, 215);
 
-.deslizador label::after {
-    position: absolute;
-    bottom: -.2em;
-    left: -.2em;
-    right: -.2em;
-    top: -.2em;
-    border-radius: 100%;
-    box-shadow: inset 0 0 0 .2em white,
-                inset 0 2px 2px black,
-                0 1px 1px hsla(0,0%,100%,.25);
-    content: '';
-    
+ }
+ #show_box {
+    position: fixed;
+    width: 75em;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.85);
+    z-index: 100;
+    top: 0;
+   
 }
-
-/*/////////////// Control de botones de selección de imagen mediante inputs ////////////////////*/
-
-.deslizador:hover label {
-    opacity: 1;
-    visibility: visible;
-}
-#wrapper_deslizador li input:checked + label {
-    max-width: .25em;
-    max-height: .5em;
-    background-color: #111;
-}
-.deslizador:hover li:nth-child(1) label {
-    left: 1.5em;
-}
-.deslizador:hover li:nth-child(2) label {
-    left: 2.5em;
-}
-.deslizador:hover li:nth-child(3) label {
-    left: 3.5em;
-}
-.deslizador:hover li:nth-child(4) label {
-    left: 4.5em;
-}
-.deslizador:hover li:nth-child(5) label {
-    left: 5.5em;
-}
-.deslizador:hover li:nth-child(6) label {
-    left: 6.5em;
-}
-.deslizador:hover li:nth-child(7) label {
-    left: 7.5em;
-}
-.deslizador:hover li:nth-child(8) label {
-    left: 8.5em;
-}
-.deslizador:hover li:nth-child(9) label {
-    left: 9.5em;
-}
-.deslizador:hover li:nth-child(10) label {
-    left: 10.5em;
-}
-.deslizador:hover li:nth-child(11) label {
-    left: 11.5em;
-}
-.deslizador:hover li:nth-child(12) label {
-    left: 12.5em;
-}
-.deslizador:hover li:nth-child(13) label {
-    left: 13.5em;
-}
-
-
-/*/////////////// Control de botones de selección de imagen mediante inputs ////////////////////*/
-
-/* ////////////////////////////////////////Imagenes ////////////////////////////////////////////*/
-
-.deslizador img {
-    /* resize: both; */
-    width: 15.625em;
-    height: 20em;
-    opacity: 0;
-    transition: .25s;
+.visibilityHidden {
     visibility: hidden;
-    border-radius: 10px;
-    padding: 0;
+}
+.popup {
+    position: relative;
+    display: inline-block;
+    
+    }
+
+
+#show_box .show {
+    animation-duration: 3s;
+    animation: fadeIn;
 }
 
+.scrollBlock{
+    overflow: hidden;
+}
+/* Add animation (fade in the popup) */
 
-
-.deslizador li input:checked ~ img {
-    opacity: 1;
-    visibility: visible;
-    z-index: 10;
-    transition: 1.5s;
+@keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity:1 ;}
 }
