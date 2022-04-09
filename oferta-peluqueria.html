@@ -96,6 +96,7 @@
                     var bodyBlock = document.getElementsByTagName("body")[0];
                     var imgShown = document.getElementById("img_show_box");
                     var nextImg = document.getElementsByClassName("rightArrow")[0];
+                    var backImg = document.getElementsByClassName("leftArrow")[0];
                     let fotoNumero;
 
                     function showFigBox(numeroFoto) {
@@ -112,8 +113,9 @@
                     popup.classList.remove("show");
                     bodyBlock.classList.remove("scrollBlock");
                     }
-                    nextImg.addEventListener("click", imagenSiguiente());
-                    nextImg.addEventListener("click", imagenAtras());
+
+                    nextImg.addEventListener("click", imagenSiguiente);
+                    backImg.addEventListener("click", imagenAtras);
                     function imagenSiguiente() {
                         if(fotoNumero<12){
                         imgShown.src="imagenes/peinados/peinado"+(fotoNumero+1)+".jpg";
@@ -121,8 +123,7 @@
                         }else {
                             fotoNumero=1;
                             imgShown.src="imagenes/peinados/peinado"+(fotoNumero)+".jpg";                           
-                        }    
-                    }    
+                    }}    
                     function imagenAtras() {
                         if(fotoNumero>1){
                         imgShown.src="imagenes/peinados/peinado"+(fotoNumero-1)+".jpg";
@@ -130,8 +131,7 @@
                         }else{
                             fotoNumero=13;
                             imgShown.src="imagenes/peinados/peinado"+(fotoNumero-1)+".jpg";                           
-                            }                         
-                    }    
+                    }}    
                     
                     </script>
 
