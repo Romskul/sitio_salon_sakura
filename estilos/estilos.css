@@ -366,7 +366,7 @@ display: flex;
  /*///////////////////////////////inicio.html/////////////////////////////////*/
 
  /*//////////////////////////////ofertas_peluqueria /////////////////////////////*/
- .mainContent_pelu {
+.mainContent_pelu {
     grid-area: main;
     display: flex;
     flex-direction: column;
@@ -377,7 +377,7 @@ display: flex;
  
 
 
- .subtitulo_ofertas{
+.subtitulo_ofertas{
     padding-top: 5em;
     font-family: 'playballregular';
     font-weight: normal;
@@ -388,7 +388,7 @@ display: flex;
  
  /*////////////////////////////GALERIA OFERTAS////////////////////////*/
  
- #wrapper_imagenes {
+#wrapper_imagenes {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -397,12 +397,12 @@ display: flex;
     padding-top: 2em;
  }
 
- .fila_peinados {
+.fila_peinados {
      width: 60%;
      padding-left: 11em;
  }
 
- #wrapper_imagenes .fila_peinados img {
+#wrapper_imagenes .fila_peinados img {
     width: 12%;
     margin: 2em;
     cursor: pointer;
@@ -410,28 +410,91 @@ display: flex;
     border: ridge 2px rgb(251, 192, 215);
 
  }
+
+#wrapper_imagenes .fila_peinados img:hover {
+     filter: opacity(60%);
+     filter: grayscale(60%);
+     transform: scale(110%);
+     transition: 1s;
+ }
+.close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 65px;
+    font-family: sans-serif;
+    cursor: pointer;
+  }
+
+.close:hover{
+    transform: scale(110%);
+    transition: 1s;
+}
+
+.flecha{
+    height: 9em;
+}
+
+.leftArrow{
+    position: absolute;
+    top: 25em;
+    left: 9em;
+    color: #f1f1f1;
+    width: 3em;
+    font-weight: bold;
+    cursor: pointer; 
+  }
+
+.leftArrow:hover{
+      transform: translateX(-15px);
+      transition: 1s;
+  }
+  
+.rightArrow{
+    position: absolute;
+    top: 25em;
+    right: 9em;
+    color: #f1f1f1;
+    width: 3em;
+    font-weight: bold;
+    cursor: pointer; 
+}
+.rightArrow:hover {
+    transform: translateX(15px);
+    transition: 1s;
+}
  #show_box {
     position: fixed;
-    width: 75em;
+    width: 80em;
     height: 100vh;
-    background-color: rgba(0, 0, 0, 0.85);
+    background-color: rgba(0, 0, 0, 0.90);
     z-index: 100;
     top: 0;
    
 }
 .visibilityHidden {
     visibility: hidden;
+    
 }
 .popup {
     position: relative;
     display: inline-block;
     
-    }
+}
 
+#img_show_box{
+    position: absolute;
+    z-index: 200;
+    width: 40em;
+    height: 50em;
+    top:5em;
+    left: 20em;
+}
 
-#show_box .show {
-    animation-duration: 3s;
+.show {
     animation: fadeIn;
+    animation-duration: 1s;
 }
 
 .scrollBlock{
@@ -441,5 +504,9 @@ display: flex;
 
 @keyframes fadeIn {
     from {opacity: 0;}
-    to {opacity:1 ;}
+    to {opacity: 1;}
+}
+@keyframes fadeOut {
+    from {opacity: 1;}
+    to {opacity: 0;}
 }
