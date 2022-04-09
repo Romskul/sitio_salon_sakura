@@ -86,8 +86,8 @@
                 <div id="show_box" class="visibilityHidden"> 
                     <span class="close">&times;</span>               
                     <img id="img_show_box">
-                    <img class="leftArrow" src="imagenes/flecha_izquierda.png" onclick="imagenAtras(1)"> 
-                    <img class="rightArrow" src="imagenes/flecha_derecha.png" onclick="imagenSiguiente(1)">
+                    <img class="leftArrow" src="imagenes/flecha_izquierda.png"> 
+                    <img class="rightArrow" src="imagenes/flecha_derecha.png">
                 </div>
 
                  <script>
@@ -111,30 +111,28 @@
                     popup.classList.add("visibilityHidden");
                     popup.classList.remove("show");
                     bodyBlock.classList.remove("scrollBlock");
-                    nextImg.addEventListener("click", imagenSiguiente());
                     }
-                    
-                    function imagenSiguiente(fotoAvance) {
+                    nextImg.addEventListener("click", imagenSiguiente());
+                    nextImg.addEventListener("click", imagenAtras());
+                    function imagenSiguiente() {
                         if(fotoNumero<12){
-                        imgShown.src="imagenes/peinados/peinado"+(fotoNumero+fotoAvance)+".jpg";
-                        fotoNumero=fotoNumero+fotoAvance;
+                        imgShown.src="imagenes/peinados/peinado"+(fotoNumero+1)+".jpg";
+                        fotoNumero=fotoNumero+1;
                         }else {
                             fotoNumero=1;
                             imgShown.src="imagenes/peinados/peinado"+(fotoNumero)+".jpg";                           
                         }    
                     }    
-                    function imagenAtras(fotoAvance) {
+                    function imagenAtras() {
                         if(fotoNumero>1){
-                        imgShown.src="imagenes/peinados/peinado"+(fotoNumero-fotoAvance)+".jpg";
-                        fotoNumero=fotoNumero-fotoAvance;
+                        imgShown.src="imagenes/peinados/peinado"+(fotoNumero-1)+".jpg";
+                        fotoNumero=fotoNumero-1;
                         }else{
                             fotoNumero=13;
-                            imgShown.src="imagenes/peinados/peinado"+(fotoNumero-fotoAvance)+".jpg";                           
+                            imgShown.src="imagenes/peinados/peinado"+(fotoNumero-1)+".jpg";                           
                             }                         
                     }    
                     
-
-
                     </script>
 
 
