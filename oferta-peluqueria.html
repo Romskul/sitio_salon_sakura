@@ -64,59 +64,77 @@
                 <div id="wrapper_imagenes">
                     
                     <div class="fila_peinados">
-                
-                        <img src="imagenes/peinados/peinado1.jpg" alt="Panel 1" onclick="showFigBox()">
-                    
-                        <img src="imagenes/peinados/peinado2.jpg" alt="Panel 2" onclick="showFigBox()">
-                    
-                        <img src="imagenes/peinados/peinado3.jpg" alt="Panel 3" onclick="showFigBox()">
-                    
-                        <img src="imagenes/peinados/peinado4.jpg" alt="Panel 4" onclick="showFigBox()">
-                    
-
+                        <img src="imagenes/peinados/peinado1.jpg" alt="Peinado 1" onclick="showFigBox(1)">
+                        <img src="imagenes/peinados/peinado2.jpg" alt="Peinado 2" onclick="showFigBox(2)">
+                        <img src="imagenes/peinados/peinado3.jpg" alt="Peinado 3" onclick="showFigBox(3)">
+                        <img src="imagenes/peinados/peinado4.jpg" alt="Peinado 4" onclick="showFigBox(4)">
                     </div>
                     <div class="fila_peinados">
-                        <img src="imagenes/peinados/peinado5.jpg" alt="Panel 5" onclick="showFigBox()">
-
-                        <img src="imagenes/peinados/peinado6.jpg" alt="Panel 6" onclick="showFigBox()">
-                    
-                        <img src="imagenes/peinados/peinado7.jpg" alt="Panel 7" onclick="showFigBox()">
-                    
-                        <img src="imagenes/peinados/peinado8.jpg" alt="Panel 8" onclick="showFigBox()">
-                
+                        <img src="imagenes/peinados/peinado5.jpg" alt="Peinado 5" onclick="showFigBox(5)">
+                        <img src="imagenes/peinados/peinado6.jpg" alt="Peinado 6" onclick="showFigBox(6)">
+                        <img src="imagenes/peinados/peinado7.jpg" alt="Peinado 7" onclick="showFigBox(7)">
+                        <img src="imagenes/peinados/peinado8.jpg" alt="Peinado 8" onclick="showFigBox(8)">
                     </div>
                     <div class="fila_peinados">
+                        <img src="imagenes/peinados/peinado9.jpg" alt="Peinado 9" onclick="showFigBox(9)">
+                        <img src="imagenes/peinados/peinado10.jpg" alt="Peinado 10" onclick="showFigBox(10)">
+                        <img src="imagenes/peinados/peinado11.jpg" alt="Peinado 11" onclick="showFigBox(11)">
+                        <img src="imagenes/peinados/peinado12.jpg" alt="Peinado 12" onclick="showFigBox(12)">
+                    </div>
 
-                        <img src="imagenes/peinados/peinado9.jpg" alt="Panel 9" onclick="showFigBox()">
-
-                        <img src="imagenes/peinados/peinado10.jpg" alt="Panel 10" onclick="showFigBox()">
-
-                        <img src="imagenes/peinados/peinado11.jpg" alt="Panel 11" onclick="showFigBox()">
-
-                        <img src="imagenes/peinados/peinado12.jpg" alt="Panel 12" onclick="showFigBox()">
                 </div>
-
-
-                   
-
-
-                <div id="show_box" class="visibilityHidden" onclick="showFigBox()">                
+                <div id="show_box" class="visibilityHidden"> 
+                    <span class="close">&times;</span>               
                     <img id="img_show_box">
+                    <img class="leftArrow" src="imagenes/flecha_izquierda.png" onclick="imagenAtras(1)"> 
+                    <img class="rightArrow" src="imagenes/flecha_derecha.png" onclick="imagenSiguiente(1)">
                 </div>
 
                  <script>
-                    // When the user clicks on <div>, open the popup
+                    
                     var popup = document.getElementById("show_box");
                     var bodyBlock = document.getElementsByTagName("body")[0];
-                    var fotoElegida;
+                    var imgShown = document.getElementById("img_show_box");
+                    var nextImg = document.getElementsByClassName("rightArrow")[0];
+                    let fotoNumero;
 
-                    function showFigBox() {            
-                        popup.classList.toggle("show");
-                        popup.classList.toggle("visibilityHidden");
-                        bodyBlock.classList.toggle("scrollBlock");
-                    
+                    function showFigBox(numeroFoto) {
+                        popup.classList.add("show");
+                        popup.classList.remove("visibilityHidden");
+                        bodyBlock.classList.add("scrollBlock");
+                        imgShown.src="imagenes/peinados/peinado"+numeroFoto+".jpg";
+                        fotoNumero = numeroFoto;
                     }
-                
+                                                          
+                    var spanClose = document.getElementsByClassName("close")[0];
+                    spanClose.onclick = function() { 
+                    popup.classList.add("visibilityHidden");
+                    popup.classList.remove("show");
+                    bodyBlock.classList.remove("scrollBlock");
+                    nextImg.addEventListener("click", imagenSiguiente());
+                    }
+                    
+                    function imagenSiguiente(fotoAvance) {
+                        if(fotoNumero<12){
+                        imgShown.src="imagenes/peinados/peinado"+(fotoNumero+fotoAvance)+".jpg";
+                        fotoNumero=fotoNumero+fotoAvance;
+                        }else {
+                            fotoNumero=1;
+                            imgShown.src="imagenes/peinados/peinado"+(fotoNumero)+".jpg";                           
+                        }    
+                    }    
+                    function imagenAtras(fotoAvance) {
+                        if(fotoNumero>1){
+                        imgShown.src="imagenes/peinados/peinado"+(fotoNumero-fotoAvance)+".jpg";
+                        fotoNumero=fotoNumero-fotoAvance;
+                        }else{
+                            fotoNumero=13;
+                            imgShown.src="imagenes/peinados/peinado"+(fotoNumero-fotoAvance)+".jpg";                           
+                            }                         
+                    }    
+                    
+
+
                     </script>
 
 
