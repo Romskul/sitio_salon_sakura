@@ -2,7 +2,7 @@
 
 <html>
 	<head>
-		<title>Page Title</title>
+		<title>Ofertas-Peluquería</title>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="initial-scale=1.0">
         <link href="estilos/estilos.css" rel="stylesheet">
@@ -27,9 +27,9 @@
             
             <nav class="mainNav">
                     <ul>
-                        <li><a class="pagActiva" href="inicio.html">INICIO</a></li>
+                        <li><a href="inicio.html">INICIO</a></li>
                         <li class="li_desplegable">
-                            <a href="oferta.html">OFERTA<span class="material-icons">
+                            <a class="pagActiva linkIncrease" href="oferta.html">OFERTA<span class="material-icons">
                                 expand_more</span></a>
                             <div class="div_desplegable">
                                 <a class="subPagActiva" href="oferta-peluqueria.html">PELUQUERÍA</a>
@@ -40,26 +40,27 @@
                         <li><a href="#">CONTACTO</a></li>
                     </ul>
             </nav>
+           
             <div class="wrapperLogo">
                 <div class="logo">
                     <a href="inicio.html"><img src="imagenes/Logo_Salon_Sakura.png" class="logo_sakura" alt="logo Salon Sakura"></a>
                 </div>
             </div>
             <script>
-                window.onscroll=function() {
+                    window.onscroll=function() {
                     if (scrollY >= 100) {
                         document.getElementsByClassName("logo")[0].style.width="7em";
                         document.getElementsByClassName("logo")[0].style.left="12em";
                     }else {
                         document.getElementsByClassName("logo")[0].style.width="12em";
                         document.getElementsByClassName("logo")[0].style.left="0em";
-                    }
-                }
+                    }}
             </script>
             <div class="tallo">
             </div>
             <main class="mainContent_pelu">
-                
+                <img src="imagenes/lovepik-cherry-tree-png-image_400227628_wh1200_transparent2.png" alt="sakura_fondo" class="bgimg">
+                <h2 class="titulo_ofertas">Galeria de peinados</h2>
                 <h2 class="subtitulo_ofertas">Tómate tu tiempo y mira algunas de las posibilidades de nuestro trabajo</h2>
                 <div id="wrapper_imagenes">
                     
@@ -89,73 +90,12 @@
                     <img class="leftArrow" src="imagenes/flecha_izquierda.png"> 
                     <img class="rightArrow" src="imagenes/flecha_derecha.png">
                 </div>
-
-                 <script>
-                    
-                    var popup = document.getElementById("show_box");
-                    var bodyBlock = document.getElementsByTagName("body")[0];
-                    var imgShown = document.getElementById("img_show_box");
-                    var nextImg = document.getElementsByClassName("rightArrow")[0];
-                    var backImg = document.getElementsByClassName("leftArrow")[0];
-                    var spanClose = document.getElementsByClassName("close")[0];
-                    var galleryWrapper = document.querySelector('div#wrapper_imagenes');
-                    let fotoNumero;
-
-                    galleryWrapper.addEventListener('click', galleryClick);
-                    nextImg.addEventListener("click", imagenSiguiente);
-                    backImg.addEventListener("click", imagenAtras);
-                    spanClose.addEventListener("click", cerrarVentana);
-
-                    function showFigBox(numeroFoto) {
-                        popup.classList.add("show");
-                        popup.classList.remove("visibilityHidden");
-                        bodyBlock.classList.add("scrollBlock");
-                        imgShown.src="imagenes/peinados/peinado"+numeroFoto+".jpg";
-                        fotoNumero = parseInt(numeroFoto);
-                    }
-                      
-                    function galleryClick(event) {
-                        console.log(event.target);
-                        let clickedImg = event.target;
-                        if (imgId = clickedImg.dataset['img_id']){
-                            showFigBox(imgId);
-                        }
-                    }
-                    
-
-                    function cerrarVentana() { 
-                        popup.classList.add("visibilityHidden");
-                        popup.classList.remove("show");
-                        bodyBlock.classList.remove("scrollBlock");
-                    }
-
-                    function imagenSiguiente() {
-                        if(fotoNumero<12){
-                        imgShown.src="imagenes/peinados/peinado"+(fotoNumero+1)+".jpg";
-                        fotoNumero=fotoNumero+1;
-                        }else {
-                            fotoNumero=1;
-                            imgShown.src="imagenes/peinados/peinado"+(fotoNumero)+".jpg";                           
-                    }}    
-                    function imagenAtras() {
-                        if(fotoNumero>1){
-                        imgShown.src="imagenes/peinados/peinado"+(fotoNumero-1)+".jpg";
-                        fotoNumero=fotoNumero-1;
-                        }else{
-                            fotoNumero=13;
-                            imgShown.src="imagenes/peinados/peinado"+(fotoNumero-1)+".jpg";                           
-                    }}    
-                    
-                    </script>
-
-
-                
+                <h2 class="subtitulo2_ofertas">Si ves algo que te gusta o quieres proponernos algo, no dudes en contactar con nosotros mediante el formulario en <a href="contacto.html">Contacto</a></h2>
                 <div class="vuelo_petalos">
                     <img src="imagenes/vuelo_petalos2.png" alt="petalos al vuelo">
                     <img src="imagenes/vuelo_petalos2.png" alt="petalos al vuelo">
                 </div>
             </main>
-
             <footer class="pageFooter">
                 <p> Juntas Generales Kalea, 74, bajo<br/>
                     01010 Vitoria-Gasteiz, Álava<br/>
@@ -167,7 +107,58 @@
                     <img src="imagenes/aenkomer-logo.png" alt="Aenkomer">
                 </div>
             </footer>
-        
        </div> 
+       <script>
+                    
+        var popup = document.getElementById("show_box");
+        var bodyBlock = document.getElementsByTagName("body")[0];
+        var imgShown = document.getElementById("img_show_box");
+        var nextImg = document.querySelector("img.rightArrow");
+        var backImg = document.querySelector("img.leftArrow");
+        var spanClose = document.getElementsByClassName("close")[0];
+        var galleryWrapper = document.querySelector("div#wrapper_imagenes");
+        let fotoNumero;
+
+        galleryWrapper.addEventListener('click', galleryClick);
+        nextImg.addEventListener("click", imagenSiguiente);
+        backImg.addEventListener("click", imagenAtras);
+        spanClose.addEventListener("click", cerrarVentana);
+                
+        function showFigBox(numeroFoto) {
+            popup.classList.add("show");
+            popup.classList.remove("visibilityHidden");
+            bodyBlock.classList.add("scrollBlock");
+            imgShown.src="imagenes/peinados/peinado"+numeroFoto+".jpg";
+            fotoNumero = parseInt(numeroFoto);
+        }
+        function galleryClick(event) {
+            // console.log(event.target);
+            let clickedImg = event.target;
+            if (imgId = clickedImg.dataset['img_id']){
+                showFigBox(imgId);
+        }}
+        function cerrarVentana() { 
+            popup.classList.add("visibilityHidden");
+            popup.classList.remove("show");
+            bodyBlock.classList.remove("scrollBlock");
+        }
+        function imagenSiguiente() {
+            if(fotoNumero<12){
+            imgShown.src="imagenes/peinados/peinado"+(fotoNumero+1)+".jpg";
+            fotoNumero=fotoNumero+1;
+            }else {
+                fotoNumero=1;
+                imgShown.src="imagenes/peinados/peinado"+(fotoNumero)+".jpg";                           
+        }}    
+        function imagenAtras() {
+            if(fotoNumero>1){
+            imgShown.src="imagenes/peinados/peinado"+(fotoNumero-1)+".jpg";
+            fotoNumero=fotoNumero-1;
+            }else{
+                fotoNumero=13;
+                imgShown.src="imagenes/peinados/peinado"+(fotoNumero-1)+".jpg";                           
+        }}    
+        
+        </script>
 	</body>
 </html>

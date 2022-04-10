@@ -60,6 +60,7 @@
             <div class="tallo">
             </div>
             <main class="mainContent_inicio">
+                <img src="imagenes/lovepik-cherry-tree-png-image_400227628_wh1200_transparent2.png" alt="sakura_fondo" class="bgimg">
                 <h2 class="subtitulo_inicio">"¿Estás preparad@ para probar tratamientos maravillosos?"</h2>
                 <section id="section1_inicio">
                     <p id="texto_inicio">
@@ -75,11 +76,14 @@
                         <img id="imagenesSalon" class="opacity" src="imagenes/foto_salon3.jpg" alt="Salon">
                     </div>
                     <script>
-                        let id_setinterval;
+                        let id_setInterval;
                         let paso = 0;
                         let imagen = 0;
                         let fotoGaleria =document.getElementById("imagenesSalon");
-                        
+    
+                        fotoGaleria.addEventListener("mouseover", pararGaleria);
+                        fotoGaleria.addEventListener("mouseout", iniciar);
+
                         function galeria(){
                             paso++;
                             switch( paso % 2 + 1){   
@@ -104,9 +108,14 @@
                             }  
                         }
                         function iniciar(){
-                            id_setinterval=setInterval(galeria,6000); 
+                            id_setInterval=setInterval(galeria,6000); 
                             paso=1;  
                         }
+
+                        function pararGaleria() {
+                            clearInterval(id_setInterval);
+                        }
+
                         window.onload= iniciar;
                     </script>
                 </section>

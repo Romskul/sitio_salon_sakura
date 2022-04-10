@@ -29,7 +29,7 @@ html{
 body { 
     max-width: 1400px;
     margin: auto;
-    background-color: rgb(236, 226, 226);
+    /* background-color: rgb(236, 226, 226); */
     overflow: auto;
 }
 .backgroundImage {
@@ -37,25 +37,30 @@ body {
     grid-template: 
     "sd log log hd   hd   hd   hd   hd   hd" minmax(5.5em, auto)
     "sd ·  ·  ·   nv   nv   nv   nv   nv" minmax(4.5em, auto)  
-    "sd main main main main main main main main" minmax(40vh, auto)
-    "sd main main main main main main main main" minmax(40vh, auto)
-    "sd main main main main main main main main" minmax(40vh, auto)
-    "sd main main main main main main main main" minmax(40vh, auto)
+    "sd main main main main main main main main" minmax(8vh, auto)
+    "sd main main main main main main main main" minmax(8vh, auto)
+    "sd main main main main main main main main" minmax(8vh, auto)
+    "sd main main main main main main main main" minmax(8vh, auto)
     "ft ft ft ft   ft   ft   ft   ft   ft" minmax(6em, auto)
     /.15fr 1fr 1fr 2fr 2fr 2fr 2fr 2fr 2fr;
-    background-image: url(../imagenes/lovepik-cherry-tree-png-image_400227628_wh1200_transparent2.png);
-    background-size: cover;
     margin-top: 0;
-    background-color: rgb(240, 230, 230);
+    background-color: transparent;
     position: relative;
 }
-
+.bgimg {
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+    height: 50%;
+    justify-self: flex-start;
+    top: 0;
+}
 
 .pageHeader {
     grid-area: hd;
     display: flex;
     background-color: transparent;
-    padding: 0;
+    padding: 3em;
     margin: 0;
    
 }
@@ -79,6 +84,7 @@ body {
     transition: .5s;
     position: absolute;
     top: 0em;
+    z-index: 25;
 }
 
 .logo_sakura {
@@ -146,11 +152,6 @@ body {
     z-index: 25;
 }
 
-
-.espaciadoNav{
-    width: 20%;
-}
-
 .mainNav ul {
     display: flex;
     width: 80%;
@@ -177,33 +178,29 @@ body {
     text-decoration: none;
     align-items: center;
     justify-content: center;
-    margin: 0;
+
     color: black;
-    font-size: 1em;
     font-family: 'playballregular';
     font-size: .75em;
-    min-width: 8.8em;
-    min-height: 5.2em;
+    min-width: 8.85em;
+    min-height: 5.25em;
     background-image: url(../imagenes/petalo_sakura_nav2.png);
     background-size: cover;
 }
 
 .div_desplegable{
-    max-height: 50vh;
     position: absolute;
-    padding-top: 13.7em;
+    padding-top: 13.4em;
     text-align: center;
     display: none;
-    transform: scale(110%);
-    transition: 1s;
+    /* transform: scale(110%);
+    transition: 1s; */
 }
 
 .div_desplegable a {
     display: flex;
     justify-content: center;
     align-items: center;
-    min-width: 8.4em;
-    min-height: 5em;
     color: white;
     background-image: url(../imagenes/petalo_sakura_nav2.png);
     background-size: cover;
@@ -214,42 +211,40 @@ body {
     transform: scale(110%);
     transition: 1s;
 }
-
+.hover_desplegable_on{
+    transform: scale(110%);
+    transition: 1s;
+}
 .li_desplegable:hover .div_desplegable{
     display: flex;
     flex-direction: column;
     grid-gap: 0.5em;
-    /* transform: scale(110%);
-    transition: 1s; */
 }
 
-nav ul li .pagActiva{
+.mainNav ul li .pagActiva{
     display: flex;
     align-items: center;
     justify-content:center;
-    min-width: 8.9em;
-    min-height: 5.2em;
     background-image: url(../imagenes/petalo_sakura_active_page.png);
     background-size: cover;   
 }
 
-nav ul li div .subPagActiva{
-display: flex;
+.mainNav ul li div .subPagActiva{
+    display: flex;
     justify-content: center;
     align-items: center;
-    min-width: 9.155em;
-    min-height: 5.355em;
     color: black;
     background-image: url(../imagenes/petalo_sakura_active_page.png);
     background-size: cover;
     font-family: 'playballregular';
     font-size: 0.75em; 
+    padding:0;
 }
 
 .tallo {
     grid-area: sd;
     background: linear-gradient(rgb(131, 117, 111), rgb(48, 35, 36)); 
-    border-radius: 0 0 40% 0;
+    border-radius: 0 0 80% 0;
 }
 
 .mainContent {
@@ -270,6 +265,7 @@ display: flex;
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
+    border-radius: 0px 7px 7px 7px;
 }
 
 .pageFooter p{
@@ -292,17 +288,16 @@ display: flex;
 /*///////////////////////////////inicio.html/////////////////////////////////*/
 .mainContent_inicio {
     grid-area: main;
-   
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
     margin: 0;
-    padding-top: 14em;
+    padding-top: 5em;
 }
 
 .subtitulo_inicio {
-    padding-top: 2em;
+    /* padding-top: 2em; */
     font-family: 'playballregular';
     font-weight: normal;
     font-size: 2em;
@@ -319,7 +314,7 @@ display: flex;
     justify-content: space-around;
     align-items: center;
     width: 100%;
-    height: 50%;
+    height: 40em;
     padding-top: 2em;
 }
 
@@ -333,8 +328,8 @@ display: flex;
     position: relative;
     justify-content: center;
     display: flex;
-    width: 38%; 
-    height: 85%;
+    min-width: 30em; 
+    min-height: 25em;
     border: solid 4px rgb(131, 117, 111);
     border-radius: 20% 0;
     background-image: url(../imagenes/borde_sakura_bg_galeria_trans.png);
@@ -347,7 +342,7 @@ display: flex;
 }
 
 .hidden {
-    opacity: 0;
+    opacity: .1;
 }
 
 #imagenesSalon {
@@ -363,7 +358,7 @@ display: flex;
     display: flex;
     justify-content: center;
     max-width: 50%;
-    min-height: 20%;
+    min-height: 15em;
     padding-top: 3em;
 }
 
@@ -382,18 +377,39 @@ display: flex;
     align-items: center;
     margin: 0;
 }
- 
+
+.titulo_ofertas {
+    font-family: 'alluraregular';
+    font-size: 4em;
+    
+}
 
 
 .subtitulo_ofertas{
-    padding-top: 5em;
     font-family: 'playballregular';
     font-weight: normal;
     font-size: 2em;
+    padding-bottom: 2em;
+ }
+
+ .subtitulo2_ofertas{
+    width: 80%;
+    text-align: center;
+    font-family: 'playballregular';
+    font-weight: normal;
+    font-size: 2em;
+    padding: 2em;
+    line-height: 1.25em;
  }
  
- 
- 
+ .subtitulo2_ofertas a{
+     color: black;
+ }
+
+ .subtitulo2_ofertas a:hover {
+     color: rgb(251, 192, 215);
+    }
+
  /*////////////////////////////GALERIA OFERTAS////////////////////////*/
  
 #wrapper_imagenes {
@@ -401,13 +417,17 @@ display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 100%; 
-    padding-top: 2em;
+    width: 60%; 
+    padding: 2em;
+    border: ridge 4px rgb(251, 192, 215);
+    border-radius: 10% 10%;
  }
 
 .fila_peinados {
-     width: 60%;
-     padding-left: 11em;
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+     /* padding-left: 11em; */
  }
 
 #wrapper_imagenes .fila_peinados img {
@@ -416,7 +436,6 @@ display: flex;
     cursor: pointer;
     border-radius: 1em;
     border: ridge 2px rgb(251, 192, 215);
-
  }
 
 #wrapper_imagenes .fila_peinados img:hover {
@@ -446,12 +465,11 @@ display: flex;
 
 .leftArrow{
     position: absolute;
-    top: 25em;
-    left: 9em;
     color: #f1f1f1;
     width: 3em;
     font-weight: bold;
     cursor: pointer; 
+    margin-right: 60em;
   }
 
 .leftArrow:hover{
@@ -461,12 +479,11 @@ display: flex;
   
 .rightArrow{
     position: absolute;
-    top: 25em;
-    right: 9em;
     color: #f1f1f1;
     width: 3em;
     font-weight: bold;
     cursor: pointer; 
+    margin-left: 60em;
 }
 .rightArrow:hover {
     transform: translateX(15px);
@@ -479,6 +496,9 @@ display: flex;
     background-color: rgba(0, 0, 0, 0.90);
     z-index: 100;
     top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
    
 }
 .visibilityHidden {
@@ -496,8 +516,8 @@ display: flex;
     z-index: 200;
     width: 40em;
     height: 50em;
-    top:5em;
-    left: 20em;
+    /* top:10%;
+    left: 20em; */
 }
 
 .show {
@@ -513,8 +533,4 @@ display: flex;
 @keyframes fadeIn {
     from {opacity: 0;}
     to {opacity: 1;}
-}
-@keyframes fadeOut {
-    from {opacity: 1;}
-    to {opacity: 0;}
 }
