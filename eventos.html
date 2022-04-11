@@ -27,7 +27,7 @@
             
             <nav class="mainNav">
                     <ul>
-                        <li><a class="pagActiva" href="inicio.html">INICIO</a></li>
+                        <li><a href="inicio.html">INICIO</a></li>
                         <li class="li_desplegable">
                             <a href="oferta.html">OFERTA<span class="material-icons">
                                 expand_more</span></a>
@@ -36,7 +36,7 @@
                                 <a href="oferta-belleza.html">BELLEZA</a>
                             </div>
                         </li>
-                        <li><a href="eventos.html">EVENTOS</a></li>
+                        <li><a class="pagActiva" href="eventos.html">EVENTOS</a></li>
                         <li><a href="contacto.html">CONTACTO</a></li>
                     </ul>
             </nav>
@@ -103,9 +103,10 @@
                                             fotoGaleria.src="imagenes/foto_salon2.jpg";
                                             break;
                                     }
-                                    fotoGaleria.classList.remove("hidden");
-                                    break;                           
-                        }}
+                                fotoGaleria.classList.remove("hidden");
+                                break;                           
+                            }  
+                        }
                         function iniciar(){
                             id_setInterval=setInterval(galeria,6000); 
                             paso=1;  
@@ -114,7 +115,6 @@
                         function pararGaleria() {
                             clearInterval(id_setInterval);
                         }
-                        
 
                         window.onload= iniciar;
                     </script>

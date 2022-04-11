@@ -1,0 +1,94 @@
+<!doctype html>
+
+<html>
+	<head>
+		<title>Page Title</title>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="initial-scale=1.0">
+        <link href="estilos/estilos.css" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	</head>
+        
+	<body>
+        <div class="backgroundImage">
+
+            <header class="pageHeader">
+                <div class="contenedorHeader">
+                    <h1>Salón Sakura</h1>
+                </div>
+                <div class="wrapperRrss">
+                    <div class="cajaRrss">
+                        <p class="rrssTexto">Síguenos en:</p>
+                        <a href="https://www.facebook.com/Sal%C3%B3n-Sakura-Vitoria-104349711081790/"><img src="imagenes/logo_facebook.png" alt="facebook" class="fb"></a>
+                        <a href="#"><img src="imagenes/logo_instagram.png" alt="instagram" class="insta"></a>
+                    </div>  
+                </div>
+            </header>
+            
+            <nav class="mainNav">
+                    <ul>
+                        <li><a href="inicio.html">INICIO</a></li>
+                        <li class="li_desplegable">
+                            <a class="pagActiva" href="oferta.html">OFERTA<span class="material-icons">
+                                expand_more</span></a>
+                            <div class="div_desplegable">
+                                <a href="oferta-peluqueria.html">PELUQUERÍA</a>
+                                <a class="subPagActiva" href="#">BELLEZA</a>
+                            </div>
+                        </li>
+                        <li><a href="eventos.html">EVENTOS</a></li>
+                        <li><a href="contacto.html">CONTACTO</a></li>
+                    </ul>
+            </nav>
+            <div class="wrapperLogo">
+                <div class="logo">
+                    <img src="imagenes/Logo_Salon_Sakura.png" class="logo_sakura" alt="logo Salon Sakura">
+                </div>
+            </div>
+            <script>
+                
+                window.onscroll=function() {
+                    if (scrollY >= 100) {
+                        document.getElementsByClassName("logo")[0].style.width="7em";
+                        document.getElementsByClassName("logo")[0].style.left="12em";
+                    }else {
+                        document.getElementsByClassName("logo")[0].style.width="12em";
+                        document.getElementsByClassName("logo")[0].style.left="0em";
+                    }
+                }
+            </script>
+            <div class="tallo">
+            </div>
+            <main class="mainContent_inicio">
+                <img src="imagenes/lovepik-cherry-tree-png-image_400227628_wh1200_transparent2.png" alt="sakura_fondo" class="bgImgTop">
+                <h2 class="subtitulo_inicio">"¿Estás preparad@ para probar tratamientos maravillosos?"</h2>
+               
+
+
+
+
+
+
+
+
+
+
+
+                <img src="imagenes/5-52104_cherry-blossom.png" alt="" class="bgImgBottom">
+            </main>
+
+            <footer class="pageFooter">
+                <p> Juntas Generales Kalea, 74, bajo<br/>
+                    01010 Vitoria-Gasteiz, Álava<br/>
+                    Tfno: 945 30 98 69
+                </p>
+                <p>Iñaki Martin Caro - 04/2022 - Proyecto portfolio sitio-Salon-Sakura</p>
+                <div class="aenkomer">
+                    <p>Entidad colaboradora:</p>
+                    <img src="imagenes/aenkomer-logo.png" alt="Aenkomer">
+                </div>
+            </footer>
+        
+       </div> 
+	</body>
+</html>

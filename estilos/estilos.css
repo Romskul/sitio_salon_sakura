@@ -47,13 +47,23 @@ body {
     background-color: transparent;
     position: relative;
 }
-.bgimg {
+.bgImgTop {
     position: absolute;
     z-index: -1;
     width: 100%;
-    height: 50%;
+    height: 50em;
     justify-self: flex-start;
     top: 0;
+}
+
+.bgImgBottom{
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+    height: 80em;
+    justify-self: flex-start;
+    bottom: 0;
+    opacity: 40%;
 }
 
 .pageHeader {
@@ -167,10 +177,6 @@ body {
     display: flex;
     align-items: center;
     justify-content:center;
-    /* min-width: 6.4em;
-    min-height: 3.75em;
-    background-image: url(../imagenes/petalo_sakura_nav2.png);
-    background-size: cover;    */
 }
 
 .mainNav ul li a{
@@ -178,19 +184,18 @@ body {
     text-decoration: none;
     align-items: center;
     justify-content: center;
-
     color: black;
     font-family: 'playballregular';
     font-size: .75em;
-    min-width: 8.85em;
-    min-height: 5.25em;
+    min-width: 8.92em;
+    min-height: 5.33em;
     background-image: url(../imagenes/petalo_sakura_nav2.png);
     background-size: cover;
 }
 
 .div_desplegable{
     position: absolute;
-    padding-top: 13.4em;
+    padding-top: 13.6em;
     text-align: center;
     display: none;
     /* transform: scale(110%);
@@ -307,6 +312,7 @@ body {
     font-family: 'playballregular';
     font-weight: normal;
     font-size: 2em;
+    padding-bottom: 3em;
 }
 
 #section1_inicio {
@@ -329,11 +335,10 @@ body {
     justify-content: center;
     display: flex;
     min-width: 30em; 
-    min-height: 25em;
+    min-height: 24em;
     border: solid 4px rgb(131, 117, 111);
     border-radius: 20% 0;
-    background-image: url(../imagenes/borde_sakura_bg_galeria_trans.png);
-    background-size: cover; 
+    background-color: rgba(246, 242, 247, 0.582);
     margin-right: 4em;
 }
 
@@ -407,7 +412,7 @@ body {
  }
 
  .subtitulo2_ofertas a:hover {
-     color: rgb(251, 192, 215);
+     color: rgb(221, 118, 157);
     }
 
  /*////////////////////////////GALERIA OFERTAS////////////////////////*/
@@ -421,6 +426,7 @@ body {
     padding: 2em;
     border: ridge 4px rgb(251, 192, 215);
     border-radius: 10% 10%;
+    background-color: rgb(246, 242, 247);
  }
 
 .fila_peinados {
