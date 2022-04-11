@@ -550,9 +550,9 @@ body {
     margin: auto;
     border: solid 6px #7b1414;
     border-radius: 15px;
-    overflow: hidden;
-     
+    overflow: hidden;    
 }
+
 #slider img{
     width: 30em;
     height: 23em;
@@ -565,14 +565,31 @@ body {
 
 /*/////////////////////////contacto.html/////////////////////////////*/
 
+.mainContent_contacto {
+    grid-area: main;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    margin: 0;
+    ;
+}
+
+.titulo_contacto {
+    font-family: 'alluraregular';
+    align-self: center;
+    font-size: 4em;
+}
+
 .contacto_acceso{
     display: flex;
     justify-content: space-around;
     width: 100%;
-    height: 45em;
+    height: 50em;
  }
 
 .location {
+    padding: 1em;
     font-family: 'playballregular';
     font-size: 1.5em;
 }
@@ -586,14 +603,49 @@ body {
     margin-left: 3em;
 }
 
-#formu{
+#wrapper_texto_horario{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1em;
+    border: ridge 4px rgb(131, 117, 111);
+    border-radius: 20% 8px;
+    margin-top: 2em;
+    background-color: rgba(255, 220, 234, 0.485);
+}
+
+.horario_texto_title {
+    font-family: 'playballregular';
+    margin: 0.25em 0em;
+    font-size: 1.2em;
+    padding: 0;
+}
+
+.horario_texto {
+    line-height: 1.7em;
+    font-family: 'robotoregular';
+    padding: 0;
+    margin: 0;
+}
+
+.horario_texto span {
+    font-weight: bolder;
+}
+
+.presentacion_formu {
+    width: 60%;
+    font-family: 'robotoregular';
+    padding: 1em;
+}
+
+#formu {
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 50%;
 }
 
-#formu form{
+#formu form {
     display: flex;
     flex-direction: column;
     width: 50%;
