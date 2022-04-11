@@ -47,7 +47,10 @@
                 </div>
             </div>
             <script>
-                    window.onscroll=function() {
+
+                window.addEventListener("scroll", logoPosition);
+
+                function logoPosition() {
                     if (scrollY >= 100) {
                         document.getElementsByClassName("logo")[0].style.width="7em";
                         document.getElementsByClassName("logo")[0].style.left="12em";
@@ -55,6 +58,7 @@
                         document.getElementsByClassName("logo")[0].style.width="12em";
                         document.getElementsByClassName("logo")[0].style.left="0em";
                     }}
+
             </script>
             <div class="tallo">
             </div>
@@ -120,7 +124,14 @@
         nextImg.addEventListener("click", imagenSiguiente);
         backImg.addEventListener("click", imagenAtras);
         spanClose.addEventListener("click", cerrarVentana);
-                
+            
+        function galleryClick(event) {
+            // console.log(event.target);
+            let clickedImg = event.target;
+            if (imgId = clickedImg.dataset['img_id']){
+                showFigBox(imgId);
+
+
         function showFigBox(numeroFoto) {
             popup.classList.add("show");
             popup.classList.remove("visibilityHidden");
@@ -128,11 +139,7 @@
             imgShown.src="imagenes/peinados/peinado"+numeroFoto+".jpg";
             fotoNumero = parseInt(numeroFoto);
         }
-        function galleryClick(event) {
-            // console.log(event.target);
-            let clickedImg = event.target;
-            if (imgId = clickedImg.dataset['img_id']){
-                showFigBox(imgId);
+        
         }}
         function cerrarVentana() { 
             popup.classList.add("visibilityHidden");

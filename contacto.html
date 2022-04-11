@@ -61,8 +61,50 @@
             </div>
             <main class="mainContent_inicio">
                 <img src="imagenes/lovepik-cherry-tree-png-image_400227628_wh1200_transparent2.png" alt="sakura_fondo" class="bgImgTop">
-                <h2 class="subtitulo_inicio">"¿Estás preparad@ para probar tratamientos maravillosos?"</h2>
-                
+                <section class="contacto_acceso">
+                    
+                    <article id="iframe_maps">
+                        <p class="location">¿Dónde estamos?</p>
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d509.5484687201232!2d-2.6791986177246474!3d42.86509541368684!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd4fc3a835d28cd3%3A0x99a7d1d51a74517a!2sPeluqueria%20Sal%C3%B3n%20Sakura!5e0!3m2!1ses!2ses!4v1649681181544!5m2!1ses!2ses" width="450" height="350" style="border:0;" 
+                        allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </article>
+
+                    <article id="formu">
+                        <form name="formulario_html" action="archivo_examen.php"  method="post">
+                                    
+                            <label for="nombe"><span>*</span>Nombre y Apellidos:</label>
+                            <div class="div_input">
+                                <input type="text" name="nombre" id="nombre" placeholder="Escriba aquí su nombre y apellidos" autocomplete="off" />
+                                <i class="material-icons">person</i>
+                            </div>
+                            <label for="email"><span>*</span>Email:</label>
+                            <div class="div_input">
+                                <input type="email" name="email" id="email" required placeholder="Escriba su email" autocomplete="off"/>
+                                <i class="material-icons">email</i>   
+                            </div>
+                            <label for="tel"><span>*</span>Teléfono:</label>
+                            <div class="div_input">
+                                <input type="tel" name="tel" id="tel" placeholder="Escriba su telefono de contacto" requered autocomplete="off"/>
+                                <i class="material-icons">phone</i>
+                            </div>
+                            <label for="mensaje">Comentarios:</label>
+                            <textarea id="mensaje" name="mensaje" rows="10" placeholder="Deja aquí tus comentarios"></textarea>
+
+
+                            <input type="submit" value="Enviar"/>
+                            <input type="reset" value="Borrar datos"/>
+                        
+                            <p id="obligatorio"><span>*</span>Campos obligatorios.</p>
+                        </form>
+                    </article>
+                </section>
+
+
+
+
+
+
+
                 <img src="imagenes/5-52104_cherry-blossom.png" alt="" class="bgImgBottom">
             </main>
 
