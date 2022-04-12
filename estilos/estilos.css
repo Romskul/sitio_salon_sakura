@@ -575,33 +575,47 @@ body {
     cursor: pointer;
 }
 
-.wrapper_icon_left:hover {
-    transform: scale(120%);
-    transition: 1s;
+.wrapper_icon_left_decrease {
+    transform: scale(92%);
+    transition: 0.1s;
 }
 
-.wrapper_icon_right:hover {
-    transform: scale(120%);
-    transition: 1s;
+
+.wrapper_icon_right_decrease {
+    transform: scale(92%);
+    transition: 0.1s;
 }
 
 .left {
-    color: white;
-    padding-left: .30em;
+    color: black;
+    padding-left: .35em;
 }
 
 .right{
-    color: white;
+    color: black;
+    padding-left: 0.15em;
 }
 
-#visor {
+.visor {
     position: relative;
     width: 30em;
     height: 23em;
     margin: auto;
     border: solid 6px #7b1414;
     border-radius: 15px;
-    overflow: hidden;    
+    overflow: hidden;   
+    transition: 0.1s; 
+}
+
+.visor_reducido {
+    position: relative;
+    width: 18em;
+    height: 23em;
+    margin: auto;
+    border: solid 6px #7b1414;
+    border-radius: 15px;
+    overflow: hidden;   
+    transition: 0.3s;  
 }
 
 #slider img{
@@ -609,10 +623,20 @@ body {
     height: 23em;
 }
 
+#slider #imagen5 {
+    width: 18em;
+}
+#slider #imagen7{
+    width: 18em;
+}
+
 #slider {
-    width: 210em;
+    width: 186em;
     position: absolute;
-    /* left: 0em; */
+}
+
+.transicion{
+    transition: 0.5s;
 }
 
 .img_show_box_products{
@@ -621,8 +645,32 @@ body {
     transform: scale(17%);
 }
 
+.img_show_box_products_ampliado{
+    position: absolute;
+    z-index: 200;
+    transform: scale(34%);
+}
+
+.movimiento_left0{
+    left: 0em;
+}
 .movimiento_left1{
     left: -30em;
+}
+.movimiento_left2{
+    left: -60em;
+}
+.movimiento_left3{
+    left: -90em;
+}
+.movimiento_left4{
+    left: -120em;
+}
+.movimiento_left5{
+    left: -138em;
+}
+.movimiento_left6{
+    left: -168em;
 }
 
 /*/////////////////////////contacto.html/////////////////////////////*/

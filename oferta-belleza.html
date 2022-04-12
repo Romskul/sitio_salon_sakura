@@ -65,15 +65,15 @@
                 <h2 class="subtitulo_inicio">"Te presentamos nuestra gama de tratamientos de belleza veganos"</h2>
                 <div id="wrapper_visor">
                     <div class="wrapper_icon_left"><span class="material-icons left">arrow_back_ios</span></div>
-                    <div id="visor">
+                    <div class="visor">
                         <div id="slider">
                             <img src="imagenes/productos/producto1.jpg" class="js_galleryImg" data-img_id="1"/><!--
                         --><img src="imagenes/productos/producto2.jpg" class="js_galleryImg" data-img_id="2"/><!--
                         --><img src="imagenes/productos/producto3.jpg" class="js_galleryImg" data-img_id="3"/><!--
                         --><img src="imagenes/productos/producto4.jpg" class="js_galleryImg" data-img_id="4"/><!--
-                        --><img src="imagenes/productos/producto5.jpg" class="js_galleryImg" data-img_id="5"/><!--
+                        --><img src="imagenes/productos/producto5.jpg" id="imagen5" class="js_galleryImg" data-img_id="5"/><!--
                         --><img src="imagenes/productos/producto6.jpg" class="js_galleryImg" data-img_id="6"/><!--
-                        --><img src="imagenes/productos/producto7.jpg" class="js_galleryImg" data-img_id="7"/>
+                        --><img src="imagenes/productos/producto7.jpg" id="imagen7" class="js_galleryImg" data-img_id="7"/>
                         </div>
                     </div>
                     <div class="wrapper_icon_right"><span class="material-icons right">arrow_forward_ios</span></div>
@@ -91,19 +91,20 @@
                     var backImg = document.querySelector("div.wrapper_icon_left");
                     var spanClose = document.querySelector("span.close");
                     var galleryWrapper = document.querySelector("div#slider");
+                    var galleryVisor = document.querySelector("div.visor");
+                    var posicion=0;
                     let fotoNumero;
-            
+
+
                     galleryWrapper.addEventListener('click', galleryClick);
                     nextImg.addEventListener("click", imagenSiguiente);
                     backImg.addEventListener("click", imagenAtras);
                     spanClose.addEventListener("click", cerrarVentana);
                         
                     function galleryClick(event) {
-                        // console.log(event.target);
                         let clickedImg = event.target;
                         if (imgId = clickedImg.dataset['img_id']){
                             showFigBox(imgId);
-            
             
                     function showFigBox(numeroFoto) {
                         popup.classList.add("show");
@@ -111,6 +112,11 @@
                         bodyBlock.classList.add("scrollBlock");
                         imgShown.src="imagenes/productos/producto"+numeroFoto+".jpg";
                         fotoNumero = parseInt(numeroFoto);
+                        if(numeroFoto==5 || numeroFoto==6 || numeroFoto==7){
+                            imgShown.classList.add("img_show_box_products_ampliado");
+                        } else {
+                            imgShown.classList.remove("img_show_box_products_ampliado");
+                        }
                     }
                     
                     }}
@@ -119,18 +125,60 @@
                         popup.classList.remove("show");
                         bodyBlock.classList.remove("scrollBlock");
                     }
+                    setTimeout(() => {
+                        imagenSiguiente();
+                        }, 100);
                     function imagenSiguiente() {
-                        // alert("la funcion se activa");
-                        galleryWrapper.className="movimiento_left1";
-                    }    
-                    function imagenAtras() {
-                        if(fotoNumero>1){
-                        imgShown.src="imagenes/peinados/peinado"+(fotoNumero-1)+".jpg";
-                        fotoNumero=fotoNumero-1;
+                        nextImg.classList.add("wrapper_icon_right_decrease");
+                        setTimeout(() => {
+                        quitarAnimacion();
+                        }, 100);
+                        function quitarAnimacion(){
+                            nextImg.classList.remove("wrapper_icon_right_decrease");
+                        }
+                        if(posicion<6){
+                            posicion=posicion+1;
+                            galleryWrapper.className="movimiento_left"+posicion;
+                            galleryWrapper.classList.add("transicion");
+                            if(posicion==4 || posicion==6) {
+                                galleryVisor.className="visor_reducido";
+                            }else {
+                                galleryVisor.className="visor";
+                            }
                         }else{
-                            fotoNumero=13;
-                            imgShown.src="imagenes/peinados/peinado"+(fotoNumero-1)+".jpg";                           
-                    }}    
+                            posicion=0;
+                            galleryWrapper.className="movimiento_left"+posicion;
+                            galleryVisor.className="visor";
+                            galleryWrapper.classList.remove("transicion");
+                        }}
+                        
+                        
+                    setTimeout(() => {
+                    imagenAtras();
+                    }, 100);    
+                    function imagenAtras() {
+                        backImg.classList.add("wrapper_icon_left_decrease");
+                        setTimeout(() => {
+                        quitarAnimacion();
+                        }, 100);
+                        function quitarAnimacion(){
+                            backImg.classList.remove("wrapper_icon_left_decrease");
+                        }
+                        if(posicion>0){
+                            posicion=posicion-1;
+                            galleryWrapper.className="movimiento_left"+posicion;
+                            galleryWrapper.classList.add("transicion");
+                            if(posicion==4 || posicion==6) {
+                                galleryVisor.className="visor_reducido";
+                            }else {
+                                galleryVisor.className="visor";
+                            }
+                        }else{
+                            posicion=6;
+                            galleryWrapper.className="movimiento_left"+posicion;
+                            galleryWrapper.classList.remove("transicion");
+                            galleryVisor.className="visor_reducido";
+                        }}    
                     
                     </script>
                 <img src="imagenes/5-52104_cherry-blossom.png" alt="" class="bgImgBottom">
