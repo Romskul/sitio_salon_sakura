@@ -88,9 +88,9 @@
                     </div>
 
                 </div>
-                <div id="show_box" class="visibilityHidden"> 
+                <div class="show_box visibilityHidden"> 
                     <span class="close">&times;</span>               
-                    <img id="img_show_box">
+                    <img class="img_show_box">
                     <img class="leftArrow" src="imagenes/flecha_izquierda.png"> 
                     <img class="rightArrow" src="imagenes/flecha_derecha.png">
                 </div>
@@ -111,9 +111,9 @@
        </div> 
        <script>
                     
-        var popup = document.getElementById("show_box");
+        var popup = document.querySelector("div.show_box");
         var bodyBlock = document.getElementsByTagName("body")[0];
-        var imgShown = document.getElementById("img_show_box");
+        var imgShown = document.querySelector("img.img_show_box");
         var nextImg = document.querySelector("img.rightArrow");
         var backImg = document.querySelector("img.leftArrow");
         var spanClose = document.getElementsByClassName("close")[0];
@@ -159,8 +159,8 @@
             imgShown.src="imagenes/peinados/peinado"+(fotoNumero-1)+".jpg";
             fotoNumero=fotoNumero-1;
             }else{
-                fotoNumero=13;
-                imgShown.src="imagenes/peinados/peinado"+(fotoNumero-1)+".jpg";                           
+                fotoNumero=12;
+                imgShown.src="imagenes/peinados/peinado"+(fotoNumero)+".jpg";                           
         }}    
         
         </script>

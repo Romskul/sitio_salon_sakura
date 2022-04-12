@@ -495,7 +495,7 @@ body {
     transform: translateX(15px);
     transition: 1s;
 }
- #show_box {
+ .show_box {
     position: fixed;
     width: 80em;
     height: 100vh;
@@ -517,13 +517,10 @@ body {
     
 }
 
-#img_show_box{
+.img_show_box{
     position: absolute;
     z-index: 200;
-    width: 40em;
-    height: 50em;
-    /* top:10%;
-    left: 20em; */
+    transform: scale(34%);
 }
 
 .show {
@@ -543,6 +540,60 @@ body {
 
 
 /*///////////////////////ofertas-belleza.html/////////////////////*/
+
+#wrapper_visor{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 48em;
+    height: 30em;
+    background-color: rgba(0, 0, 0, 0.80);
+    border-radius: 20px;
+    
+}
+.wrapper_icon_left {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 2em;
+    height: 2em;
+    border-radius: 50%;
+    background-color: silver;
+    margin-left:3.5em;
+    cursor: pointer;
+}
+
+.wrapper_icon_right {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 2em;
+    height: 2em;
+    border-radius: 50%;
+    background-color: silver;
+    margin-right:3.5em;
+    cursor: pointer;
+}
+
+.wrapper_icon_left:hover {
+    transform: scale(120%);
+    transition: 1s;
+}
+
+.wrapper_icon_right:hover {
+    transform: scale(120%);
+    transition: 1s;
+}
+
+.left {
+    color: white;
+    padding-left: .30em;
+}
+
+.right{
+    color: white;
+}
+
 #visor {
     position: relative;
     width: 30em;
@@ -557,10 +608,21 @@ body {
     width: 30em;
     height: 23em;
 }
+
 #slider {
-    width: 3000px;
+    width: 210em;
     position: absolute;
-    left: 0;
+    /* left: 0em; */
+}
+
+.img_show_box_products{
+    position: absolute;
+    z-index: 200;
+    transform: scale(17%);
+}
+
+.movimiento_left1{
+    left: -30em;
 }
 
 /*/////////////////////////contacto.html/////////////////////////////*/
