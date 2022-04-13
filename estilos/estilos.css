@@ -567,8 +567,16 @@ body {
     height: 30em;
     background-color: rgba(0, 0, 0, 0.80);
     border-radius: 20px;
-    
+    margin-top: 3em;
+    margin-bottom: 1em;
 }
+
+.subtitulo_belleza{
+    font-family: 'playballregular';
+    font-weight: normal;
+    font-size: 2em;  
+}
+
 .wrapper_icon_left {
     display: flex;
     justify-content: center;
@@ -619,7 +627,7 @@ body {
     width: 30em;
     height: 23em;
     margin: auto;
-    border: solid 6px #7b1414;
+    border: ridge 6px rgb(251, 192, 215);
     border-radius: 15px;
     overflow: hidden;   
     transition: 0.1s; 
@@ -630,10 +638,10 @@ body {
     width: 18em;
     height: 23em;
     margin: auto;
-    border: solid 6px #7b1414;
+    border: ridge 6px rgb(251, 192, 215);
     border-radius: 15px;
     overflow: hidden;   
-    transition: 0.3s;  
+    transition: 0.7s;  
 }
 
 #slider img{
@@ -651,10 +659,11 @@ body {
 #slider {
     width: 186em;
     position: absolute;
+    cursor: pointer;
 }
 
 .transicion{
-    transition: 0.5s;
+    transition: 1s;
 }
 
 .img_show_box_products{

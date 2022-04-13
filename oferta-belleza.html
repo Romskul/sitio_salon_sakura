@@ -42,7 +42,7 @@
             </nav>
             <div class="wrapperLogo">
                 <div class="logo">
-                    <img src="imagenes/Logo_Salon_Sakura.png" class="logo_sakura" alt="logo Salon Sakura">
+                    <a href="inicio.html"><img src="imagenes/Logo_Salon_Sakura.png" class="logo_sakura" alt="logo Salon Sakura"></a>
                 </div>
             </div>
             <script>
@@ -62,7 +62,7 @@
             <main class="mainContent_inicio">
                 <img src="imagenes/lovepik-cherry-tree-png-image_400227628_wh1200_transparent2.png" alt="sakura_fondo" class="bgImgTop">
                 <h2 class="titulo_ofertas">Tratamientos de Belleza</h2>
-                <h2 class="subtitulo_inicio">"Te presentamos nuestra gama de tratamientos de belleza veganos"</h2>
+                <h2 class="subtitulo_belleza">"Te presentamos nuestra gama de tratamientos de belleza veganos"</h2>
                 <div id="wrapper_visor">
                     <div class="wrapper_icon_left"><span class="material-icons left">arrow_back_ios</span></div>
                     <div class="visor">
@@ -78,12 +78,12 @@
                     </div>
                     <div class="wrapper_icon_right"><span class="material-icons right">arrow_forward_ios</span></div>
                 </div>
+                <h2 class="subtitulo2_ofertas">"Si quieres mas información acerca de nuestros tratamientos, no dudes en contactar con nosotros mediante el formulario en <a href="contacto.html">Contacto</a> o acercate a nuestro establecimiento."</h2>
                 <div class="show_box visibilityHidden"> 
                     <span class="close">&times;</span>               
                     <img class="img_show_box_products">
                 </div>
                 <script>
-                    
                     var popup = document.querySelector("div.show_box");
                     var bodyBlock = document.getElementsByTagName("body")[0];
                     var imgShown = document.querySelector("img.img_show_box_products");
@@ -94,7 +94,6 @@
                     var galleryVisor = document.querySelector("div.visor");
                     var posicion=0;
                     let fotoNumero;
-
 
                     galleryWrapper.addEventListener('click', galleryClick);
                     nextImg.addEventListener("click", imagenSiguiente);
@@ -175,8 +174,7 @@
                             galleryWrapper.classList.remove("transicion");
                             galleryVisor.className="visor_reducido";
                         }}    
-                    
-                    </script>
+                </script>
                 <img src="imagenes/5-52104_cherry-blossom.png" alt="" class="bgImgBottom">
             </main>
 
