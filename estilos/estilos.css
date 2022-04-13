@@ -330,7 +330,7 @@ body {
     margin-left: 4em;
 }
 
- .galeriaSalon{
+.galeriaSalon{
     position: relative;
     justify-content: center;
     display: flex;
@@ -500,7 +500,7 @@ body {
     position: fixed;
     width: 90em;
     height: 100vh;
-    background-color: rgba(0, 0, 0, 0.90);
+    background-color: rgba(0, 0, 0, 0.95);
     z-index: 100;
     top: 0;
     display: flex;
@@ -527,7 +527,7 @@ body {
     opacity: 0.3;
 }
 
-.img_slider_ampliada{
+.slider_figbox .img_slider_ampliada{
     transform: scale(140%);
     transition: .5s;
     opacity: 1;
@@ -566,6 +566,54 @@ body {
     from {opacity: 0;}
     to {opacity: 1;}
 }
+@media screen and (max-width:1920px)  {
+    .img_show_box{
+        position: absolute;
+        z-index: 200;
+        transform: scale(34%);
+        margin-bottom: 4em;
+    }
+
+    .slider_figbox{
+        display: inline;
+        position: absolute;
+        bottom: 2em; 
+        
+    
+    }
+    .slider_figbox .js_galleryImg{
+        width: 3.5em;
+    }
+
+    .slider_figbox .img_slider_ampliada{
+        transform: scale(140%);
+        transition: .5s;
+        opacity: 1;
+        border: solid 2px rgb(251, 192, 215);
+    
+    }
+
+    .leftArrow{
+        position: absolute;
+        color: #f1f1f1;
+        width: 3em;
+        font-weight: bold;
+        cursor: pointer; 
+        margin-right: 50em;
+        margin-bottom: 5em;
+      }
+
+      .rightArrow{
+        position: absolute;
+        color: #f1f1f1;
+        width: 3em;
+        font-weight: bold;
+        cursor: pointer; 
+        margin-left: 50em;
+        margin-bottom: 5em;
+    }
+}
+
 @media screen and (max-width:1536px)  {
     .img_show_box{
         position: absolute;
