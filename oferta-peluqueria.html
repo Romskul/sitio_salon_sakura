@@ -96,18 +96,18 @@
                         <img class="rightArrow" src="imagenes/flecha_derecha.png">
                     </div>
                     <div class="slider_figbox">
-                        <img src="imagenes/peinados/peinado1.jpg" alt="Peinado 1" class="js_galleryImg" data-img_id="1">
-                        <img src="imagenes/peinados/peinado2.jpg" alt="Peinado 2" class="js_galleryImg" data-img_id="2">
-                        <img src="imagenes/peinados/peinado3.jpg" alt="Peinado 3" class="js_galleryImg" data-img_id="3">
-                        <img src="imagenes/peinados/peinado4.jpg" alt="Peinado 4" class="js_galleryImg" data-img_id="4">
-                        <img src="imagenes/peinados/peinado5.jpg" alt="Peinado 5" class="js_galleryImg" data-img_id="5">
-                        <img src="imagenes/peinados/peinado6.jpg" alt="Peinado 6" class="js_galleryImg" data-img_id="6">
-                        <img src="imagenes/peinados/peinado7.jpg" alt="Peinado 7" class="js_galleryImg" data-img_id="7">
-                        <img src="imagenes/peinados/peinado8.jpg" alt="Peinado 8" class="js_galleryImg" data-img_id="8">
-                        <img src="imagenes/peinados/peinado9.jpg"  alt="Peinado 9" class="js_galleryImg" data-img_id="9">
-                        <img src="imagenes/peinados/peinado10.jpg" alt="Peinado 10" class="js_galleryImg" data-img_id="10">
-                        <img src="imagenes/peinados/peinado11.jpg" alt="Peinado 11" class="js_galleryImg" data-img_id="11">
-                        <img src="imagenes/peinados/peinado12.jpg" alt="Peinado 12" class="js_galleryImg" data-img_id="12">
+                        <img src="imagenes/peinados/peinado1.jpg" id="peinado1" alt="Peinado 1" class="js_galleryImg" data-img_sfig="1">
+                        <img src="imagenes/peinados/peinado2.jpg" id="peinado2" alt="Peinado 2" class="js_galleryImg" data-img_sfig="2">
+                        <img src="imagenes/peinados/peinado3.jpg" id="peinado3" alt="Peinado 3" class="js_galleryImg" data-img_sfig="3">
+                        <img src="imagenes/peinados/peinado4.jpg" id="peinado4" alt="Peinado 4" class="js_galleryImg" data-img_sfig="4">
+                        <img src="imagenes/peinados/peinado5.jpg" id="peinado5" alt="Peinado 5" class="js_galleryImg" data-img_sfig="5">
+                        <img src="imagenes/peinados/peinado6.jpg" id="peinado6" alt="Peinado 6" class="js_galleryImg" data-img_sfig="6">
+                        <img src="imagenes/peinados/peinado7.jpg" id="peinado7" alt="Peinado 7" class="js_galleryImg" data-img_sfig="7">
+                        <img src="imagenes/peinados/peinado8.jpg" id="peinado8" alt="Peinado 8" class="js_galleryImg" data-img_sfig="8">
+                        <img src="imagenes/peinados/peinado9.jpg" id="peinado9"alt="Peinado 9" class="js_galleryImg" data-img_sfig="9">
+                        <img src="imagenes/peinados/peinado10.jpg" id="peinado10" alt="Peinado 10" class="js_galleryImg" data-img_sfig="10">
+                        <img src="imagenes/peinados/peinado11.jpg" id="peinado11" alt="Peinado 11" class="js_galleryImg" data-img_sfig="11">
+                        <img src="imagenes/peinados/peinado12.jpg" id="peinado12" alt="Peinado 12" class="js_galleryImg" data-img_sfig="12">
                     </div>
                 </div> 
                 <h2 class="subtitulo2_ofertas">Si ves algo que te gusta o quieres proponernos algo, no dudes en contactar con nosotros mediante el formulario en <a href="contacto.html">Contacto</a></h2>
@@ -138,7 +138,10 @@
         var backImg = document.querySelector("img.leftArrow");
         var spanClose = document.getElementsByClassName("close")[0];
         var galleryWrapper = document.querySelector("div#wrapper_imagenes");
+        var oldImgSlider;
+        var imgSlider;
         let fotoNumero;
+        
 
         galleryWrapper.addEventListener('click', galleryClick);
         nextImg.addEventListener("click", imagenSiguiente);
@@ -147,7 +150,7 @@
             
         function galleryClick(event) {
             // console.log(event.target);
-            let clickedImg = event.target;
+            clickedImg = event.target;
             if (imgId = clickedImg.dataset['img_id']){
                 showFigBox(imgId);
 
@@ -158,6 +161,8 @@
             bodyBlock.classList.add("scrollBlock");
             imgShown.src="imagenes/peinados/peinado"+numeroFoto+".jpg";
             fotoNumero = parseInt(numeroFoto);
+            imgSlider = document.getElementById("peinado"+numeroFoto);
+            imgSlider.classList.add("img_slider_ampliada");
         }
         
         }}
@@ -165,23 +170,42 @@
             popup.classList.add("visibilityHidden");
             popup.classList.remove("show");
             bodyBlock.classList.remove("scrollBlock");
+            imgSlider.classList.remove("img_slider_ampliada");
         }
-        function imagenSiguiente() {
+        function imagenSiguiente() { 
             if(fotoNumero<12){
             imgShown.src="imagenes/peinados/peinado"+(fotoNumero+1)+".jpg";
             fotoNumero=fotoNumero+1;
+            imgSlider = document.getElementById("peinado"+fotoNumero);
+            imgSlider.classList.toggle("img_slider_ampliada");
+            oldImgSlider=document.getElementById("peinado"+(fotoNumero-1));
+            oldImgSlider.classList.toggle("img_slider_ampliada");
             }else {
                 fotoNumero=1;
-                imgShown.src="imagenes/peinados/peinado"+(fotoNumero)+".jpg";                           
-        }}    
+                imgShown.src="imagenes/peinados/peinado"+(fotoNumero)+".jpg";
+                imgSlider = document.getElementById("peinado"+fotoNumero);
+                imgSlider.classList.toggle("img_slider_ampliada");  
+                oldImgSlider=document.getElementById("peinado12");
+                oldImgSlider.classList.toggle("img_slider_ampliada");                         
+            }
+        }    
         function imagenAtras() {
             if(fotoNumero>1){
             imgShown.src="imagenes/peinados/peinado"+(fotoNumero-1)+".jpg";
             fotoNumero=fotoNumero-1;
+            imgSlider = document.getElementById("peinado"+fotoNumero);
+            imgSlider.classList.toggle("img_slider_ampliada");
+            oldImgSlider=document.getElementById("peinado"+(fotoNumero+1));
+            oldImgSlider.classList.toggle("img_slider_ampliada");
             }else{
                 fotoNumero=12;
-                imgShown.src="imagenes/peinados/peinado"+(fotoNumero)+".jpg";                           
-        }}    
+                imgShown.src="imagenes/peinados/peinado"+(fotoNumero)+".jpg";
+                imgSlider = document.getElementById("peinado"+fotoNumero);
+                imgSlider.classList.toggle("img_slider_ampliada");  
+                oldImgSlider=document.getElementById("peinado1");
+                oldImgSlider.classList.toggle("img_slider_ampliada");                           
+            }
+    }
         
         
 
