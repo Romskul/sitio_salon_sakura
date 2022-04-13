@@ -525,6 +525,7 @@ body {
 .slider_figbox .js_galleryImg{
     width: 5em;
     opacity: 0.3;
+    border: solid 2px transparent;
 }
 
 .slider_figbox .img_slider_ampliada{
