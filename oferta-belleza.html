@@ -105,7 +105,7 @@
                         let clickedImg = event.target;
                         if (imgId = clickedImg.dataset['img_id']){
                             showFigBox(imgId);
-            
+                    }}
                     function showFigBox(numeroFoto) {
                         popup.classList.add("show");
                         popup.classList.remove("visibilityHidden");
@@ -116,10 +116,8 @@
                             imgShown.classList.add("img_show_box_products_ampliado");
                         } else {
                             imgShown.classList.remove("img_show_box_products_ampliado");
-                        }
-                    }
-                    
                     }}
+                
                     function cerrarVentana() { 
                         popup.classList.add("visibilityHidden");
                         popup.classList.remove("show");
@@ -151,8 +149,6 @@
                             galleryVisor.className="visor";
                             galleryWrapper.classList.remove("transicion");
                         }}
-                        
-                        
                     setTimeout(() => {
                     imagenAtras();
                     }, 100);    

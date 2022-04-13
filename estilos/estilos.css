@@ -415,7 +415,7 @@ body {
      color: rgb(221, 118, 157);
     }
 
- /*////////////////////////////GALERIA OFERTAS////////////////////////*/
+ /*////////////////////////////GALERIA OFERTAS-PELUQUERIA////////////////////////*/
  
 #wrapper_imagenes {
     display: flex;
@@ -497,16 +497,34 @@ body {
 }
  .show_box {
     position: fixed;
-    width: 80em;
+    width: 90em;
     height: 100vh;
     background-color: rgba(0, 0, 0, 0.90);
     z-index: 100;
     top: 0;
     display: flex;
+    flex-direction: column;
     justify-content: center;
-    align-items: center;
-   
+    align-items: center; 
 }
+
+.control_figbox {
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+}
+
+.slider_figbox{
+    display: inline;
+    position: absolute;
+    bottom: 4em; 
+    
+
+}
+.slider_figbox .js_galleryImg{
+    width: 5em;
+}
+
 .visibilityHidden {
     visibility: hidden;
     
