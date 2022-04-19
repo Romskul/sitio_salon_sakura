@@ -806,6 +806,26 @@ body {
     left: -168em;
 }
 
+/*/////////////////////////eventos.html/////////////////////////////*/
+
+#wrapper_eventos{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 40em;
+}
+
+.titulo_eventos{
+    width: 80%;
+    height: 4em;
+    font-family: 'playballregular';
+    text-align: center;
+    font-size: 2.5em;
+}
+
+
+/*/////////////////////////eventos.html/////////////////////////////*/
+
 /*/////////////////////////contacto.html/////////////////////////////*/
 
 .mainContent_contacto {

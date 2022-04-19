@@ -33,7 +33,7 @@
                                 expand_more</span></a>
                             <div class="div_desplegable">
                                 <a href="oferta-peluqueria.html">PELUQUERÍA</a>
-                                <a href="oferta-belleza.html">BELLEZA</a>
+                                <a href="#">BELLEZA</a>
                             </div>
                         </li>
                         <li><a class="pagActiva" href="eventos.html">EVENTOS</a></li>
@@ -43,6 +43,7 @@
             <div class="wrapperLogo">
                 <div class="logo">
                     <a href="inicio.html"><img src="imagenes/Logo_Salon_Sakura.png" class="logo_sakura" alt="logo Salon Sakura"></a>
+                </div>
             </div>
             <script>
                 
@@ -60,65 +61,10 @@
             </div>
             <main class="mainContent_inicio">
                 <img src="imagenes/lovepik-cherry-tree-png-image_400227628_wh1200_transparent2.png" alt="sakura_fondo" class="bgImgTop">
-                <h2 class="subtitulo_inicio">"¿Estás preparad@ para probar tratamientos maravillosos?"</h2>
-                <section id="section1_inicio">
-                    <p id="texto_inicio">
-                        <strong>Salon Sakura</strong> es un centro de belleza que se encuentra en el barrio de <br/>Lakua-Arriaga en Vitoria-Gasteiz, un exclusivo salón de estética donde encontrarás a un gran equipo profesional y 
-                        recibirás los tratamientos capilares más innovadores.<br/><br/>
-                        Trabajamos con técnicas naturales, nos gusta despertar la belleza del paso del tiempo, nuestra propia belleza en evolución y por eso nuestros tratamientos 
-                        siempre van enfocados a lograr la perfección, pero favoreciendo la armonía y el bienestar.<br/><br/>
-                        En <strong>Salon Sakura</strong> nos comprometemos con la calidad de nuestra línea cosmética para cabello.
-                        Elegimos productos especialmente diseñados para el cuidado del pelo que liberan toda la energía que contiene nuestro cabello, 
-                        garantizando el máximo resultado en el campo de la belleza.<br/><br/>
-                    </p>
-                    <div class="galeriaSalon">
-                        <img id="imagenesSalon" class="opacity" src="imagenes/foto_salon3.jpg" alt="Salon">
-                    </div>
-                    <script>
-                        let id_setInterval;
-                        let paso = 0;
-                        let imagen = 0;
-                        let fotoGaleria =document.getElementById("imagenesSalon");
-    
-                        fotoGaleria.addEventListener("mouseover", pararGaleria);
-                        fotoGaleria.addEventListener("mouseout", iniciar);
-
-                        function galeria(){
-                            paso++;
-                            switch( paso % 2 + 1){   
-                                case 1:
-                                    fotoGaleria.classList.add("hidden");
-                                break;   
-                                case 2:
-                                    imagen++;
-                                    switch (imagen % 3 + 1){
-                                        case 1:
-                                            fotoGaleria.src="imagenes/foto_salon3.jpg";
-                                            break;
-                                        case 2:
-                                            fotoGaleria.src="imagenes/foto_salon4.jpg";
-                                            break;
-                                        case 3:
-                                            fotoGaleria.src="imagenes/foto_salon2.jpg";
-                                            break;
-                                    }
-                                fotoGaleria.classList.remove("hidden");
-                                break;                           
-                            }  
-                        }
-                        function iniciar(){
-                            id_setInterval=setInterval(galeria,6000); 
-                            paso=1;  
-                        }
-
-                        function pararGaleria() {
-                            clearInterval(id_setInterval);
-                        }
-
-                        window.onload= iniciar;
-                    </script>
+                <section id="wrapper_eventos">
+                    <h1 class="titulo_eventos">"Ahora mismo no contamos con ningun evento activo en el barrio. ¡Consulta nuestras redes sociales para estár al tanto de las novedades! "</h1>
+                    <img src="" alt="">
                 </section>
-                <h2 class="subtitulo2_inicio">"Pues ahora, relajate y dejanos ayudarte a encontrar tu mejor tratamiento."</h2>
                 <img src="imagenes/5-52104_cherry-blossom.png" alt="" class="bgImgBottom">
             </main>
 
